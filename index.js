@@ -3,6 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
 require('express-async-errors');
+const apiRouter = require('./routes')
 const https = require('https')
 const http = require('http')
 
