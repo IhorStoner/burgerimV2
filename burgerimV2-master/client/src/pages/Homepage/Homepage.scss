@@ -1,0 +1,26 @@
+.s-home{
+    background-color: #fff;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    &__container{
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    &__head{
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    &__order-menu{
+        display: block;
+        margin-bottom: 22px;
+    }
+    &__cart-goods{
+        display: block;
+        padding-bottom: 25px;
+    }
+    &__shopping-cart{
+        position: static;
+    }
+}
+

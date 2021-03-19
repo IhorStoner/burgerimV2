@@ -1,0 +1,126 @@
+.cart-goods{
+    display: flex;
+    margin: 0 -20px;
+    perspective: 200px;
+    &__elem{
+        padding: 9px;
+        background-color: #F1F1F1;
+        border-radius: 10px;
+        margin: 0 20px;
+        box-shadow: 0px 5px 10px;
+        transform: scale(1);
+        transition: transform .25s linear, box-shadow .25s linear;
+        &:hover{
+            transform: scale(1.01);
+            box-shadow: 0px 12px 18px;
+        }
+    }
+    &__image-zone{
+        background-color: #fff;
+        border-radius: 10px;
+        margin-bottom: 12px;
+    }
+    &__desc{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &__h4{
+        font-size: 30px;
+        line-height: 35px;
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    &__text{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        width: 100%;
+        color: #000;
+    }
+    &__action{
+        display: flex;
+        align-items: center;
+    }
+    &__cost{
+        font-family: "Roboto", sans-serif;
+        font-weight: 500!important;
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+        margin-left: 8px;
+        min-width: 100px;
+    }
+    &__select{
+        display: flex;
+        border-radius: 10px;
+        padding: 3px;
+        background-color: #fff;
+        width: 50%;
+        margin-right: 10px;
+    }
+    &__reveal{
+        font-family: "Roboto";
+        font-weight: 400px;
+        font-size: 30px;
+        line-height: 35px;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__change-select{
+        display: inline-block;
+        width: 50%;
+    }
+    &__btn-change{
+        background-color: #BFBFBF;
+        border-radius: 4px;
+        padding: 7px 3px;
+        border: none;
+        outline: none;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color .25s linear;
+        &:first-child{
+            margin-bottom: 3px;
+        }
+        &:hover{
+            background-color: #A3A3A3;
+        }
+        &:active{
+            background-color: #858585;
+        }
+    }
+    &__bag{
+        cursor: pointer;
+        padding: 0;
+        border: none;
+        outline: none;
+        &:hover{
+            .cart-goods__bag-svg{
+                fill: #6A111C
+            }
+        }
+        &:active{
+            .cart-goods__bag-svg{
+                fill: #550D16
+            }
+        }
+    }
+    &__bag-svg{
+        fill: #8F1625;
+        transition: fill .25s linear;
+    }
+    &__bag-image{
+        min-width: 100%;
+        width: auto;
+        object-fit: cover;
+        height: 100%;
+    }
+}
