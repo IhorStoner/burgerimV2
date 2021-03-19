@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import './AddProductForm.scss'
-import { ReactComponent as CloseIcon } from '../../../assets/svg/btnClose.svg'
-import { ReactComponent as AddPhotoIcon } from '../../../assets/svg/addPhotobtn.svg'
+// import { ReactComponent as CloseIcon } from '../../../assets/svg/btnClose.svg'
+// import { ReactComponent as AddPhotoIcon } from '../../../assets/svg/addPhotobtn.svg'
 import axios from 'axios'
 import config from '../../../config.json'
 
@@ -85,13 +85,13 @@ export default function AddProductForm() {
           </p>
           <div className='addProduct__addImg'>
             <label htmlFor="files" className="addProduct__labelFile">
-              <AddPhotoIcon />
+              {/* <AddPhotoIcon /> */}
               <input className='addProduct__inputFile' id='files' name='files' type="file" multiple onChange={(e) => onChangeFiles(e.target.files)} />
             </label>
             {[...images].map((file, i) =>
               <div key={i} className="addProduct__imgContainer">
                 <button type='button' className="addProduct__btnDelImg" onClick={() => setImages([])}>
-                  <CloseIcon />
+                  {/* <CloseIcon /> */}
                 </button>
                 <img src={URL.createObjectURL(file)} className='addProduct__imgItem'></img>
               </div>
