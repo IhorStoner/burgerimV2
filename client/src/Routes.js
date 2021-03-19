@@ -3,18 +3,19 @@ import { Redirect, Route, Switch, BrowserRouter as Router } from "react-router-d
 import AdminPage from './pages/AdminPage/AdminPage'
 import Homepage from './pages/Homepage/Homepage'
 
+
 export default function Routes() {
 
   return (
     <Router>
       <Switch>
-        <Route path="/home/admin">
+        <Route path="/admin">
           <AdminPage />
         </Route>
-        <Route path="/home">
+        <Route path="/" exact>
           <Homepage />
         </Route>
-        <Redirect to='/home' />
+        <Redirect to='/' />
       </Switch>
     </Router>
   )

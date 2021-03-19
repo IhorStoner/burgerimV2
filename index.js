@@ -6,7 +6,8 @@ require('express-async-errors');
 const apiRouter = require('./routes')
 const https = require('https')
 const http = require('http')
-
+const config = require('config');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -17,11 +18,11 @@ app.use(bodyParser.json());
 app.use('/api', apiRouter);
 
 
-if(process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, './client/build')))
 
-  app.get('*', (req,res) => {
-    res.sendFile(path.resolve(__dirname,'./client/build/index.html'))
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './client/build/index.html'))
   })
 }
 
@@ -31,11 +32,17 @@ app.use((err, req, res, next) => {
     .send({ error: err.message })
 });
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5002
 
 
-async function start () {
+async function start() {
   try {
+    await mongoose.connect(config.get('mongoUrl'), {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true
+    })
     http.createServer(app).listen(PORT, () => {
       console.log(`Server is running on ${PORT} port`)
     });
