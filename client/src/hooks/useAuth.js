@@ -1,6 +1,6 @@
 import {useState, useCallback, useEffect} from 'react'
 
-const storageName = 'burgerimCart'
+const storageName = 'burgerim'
 
 export const useAuth = () => {
   const [token, setToken] = useState(null)
