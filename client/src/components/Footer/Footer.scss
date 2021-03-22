@@ -1,0 +1,15 @@
+.footer{
+    padding: 15px 0;
+    &__up{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__brand{
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-size: 22px;
+        line-height: 28px;
+        color: #fff;
+    }
+}

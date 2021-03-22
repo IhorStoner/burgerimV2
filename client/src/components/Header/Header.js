@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Header.scss';
 import Info from '../../assets/svg/info.svg';
 import Moto from '../../assets/svg/moto.svg';
@@ -7,10 +7,54 @@ import Logo from '../../assets/svg/logo.svg';
 import Phone from '../../assets/svg/phone.svg';
 
 export default function Header(){
+    const [state,setState] = useState({
+      menuOpen: false,
+
+    })
+
+    const humburgerOn = (e) => {
+      if(state.menuOpen){
+        setState((prevState) => {return {...prevState,  menuOpen: false}})
+      }else{
+        setState((prevState) => {return {...prevState,  menuOpen: true}})
+      }
+      
+    }
+
     return (
     <React.Fragment>
         <nav className="nav-menu">
-          <ul className="nav-menu__list">
+          <div onClick={humburgerOn} className="nav-menu__cell-humburger nav-menu__cell-humburger--to-x">
+            <div className="nav-menu__humburger"></div>
+            {state.menuOpen && (
+              <>
+              <ul className="nav-menu__moble-sheet">
+                <li className="nav-menu__items">
+                  <a className="nav-menu__link nav-menu__link--mobile-line nav-menu__link--active" href="#">
+                    <span className="nav-menu__span">Главная</span>
+                  </a>
+                </li>
+                <li className="nav-menu__items">
+                  <a className="nav-menu__link nav-menu__link--mobile-line nav-menu__link--active" href="#">
+                    <span className="nav-menu__span">О Нас</span>
+                  </a>
+                </li>
+                <li className="nav-menu__items">
+                  <a className="nav-menu__link nav-menu__link--mobile-line" href="#">
+                    <span className="nav-menu__span">Доставка и оплата</span>
+                  </a>
+                </li>
+                <li className="nav-menu__items">
+                  <a className="nav-menu__link nav-menu__link--mobile-line" href="#">
+                    <span className="nav-menu__span">Отзывы</span>
+                  </a>
+                </li>
+              </ul>
+              <div className="nav-menu__moble-close" onClick={humburgerOn}></div>
+              </>
+            )}
+          </div>
+          <ul className="nav-menu__list nav-menu__heade">
             <li className="nav-menu__items">
               <a className="nav-menu__link nav-menu__link--active" href="#">
                 <img src={Info} />
@@ -41,7 +85,7 @@ export default function Header(){
         <div className="contanct">
           <div className="contanct__area">
             <span className="contanct__span">
-              <a className="contanct__phone" href="tel:380 96 513 66 94"><img className="contanct__call" src={Phone} alt="phone"/>+380 96 513 66 94</a>
+              <a className="contanct__phone contanct__phone--heade" href="tel:380 96 513 66 94"><img className="contanct__call" src={Phone} alt="phone"/>+380 96 513 66 94</a>
             </span>
             <select className="contanct__select">
               <option className="contanct__option">RUS</option>

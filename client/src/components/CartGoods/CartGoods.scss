@@ -2,7 +2,10 @@
     display: flex;
     margin: 0 -20px;
     perspective: 200px;
+    flex-wrap: wrap;
+    justify-content: center;
     &__elem{
+        max-width: 300px;
         padding: 9px;
         background-color: #F1F1F1;
         border-radius: 10px;
@@ -10,6 +13,8 @@
         box-shadow: 0px 5px 10px;
         transform: scale(1);
         transition: transform .25s linear, box-shadow .25s linear;
+        flex-grow: 1;
+        margin-bottom: 25px;
         &:hover{
             transform: scale(1.01);
             box-shadow: 0px 12px 18px;
