@@ -2,8 +2,10 @@ const { Router } = require('express');
 const apiRouter = Router();
 const adminRouter = require('./admin');
 const imgRouter = require('./images');
+const productsRouter = require('./products');
 
 apiRouter.use('/admin', adminRouter);
 apiRouter.use('/images', imgRouter);
+apiRouter.use('/products', productsRouter);
 
 module.exports = apiRouter;

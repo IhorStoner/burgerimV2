@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Logo from '../../../assets/svg/logo.svg';
 import Phone from '../../../assets/svg/phone.svg';
 import './AdminHeader.scss'
 
-export default function AdminHeader() {
+export default function AdminHeader({activeNav,setActiveNav}) {
+ 
+
   return (
     <div className='adminHeader'>
       <section className="s-home">
@@ -13,19 +16,19 @@ export default function AdminHeader() {
             <nav className="nav-menu">
               <ul className="nav-menu__list">
                 <li className="nav-menu__items">
-                  <a className="nav-menu__link nav-menu__link--active" href="#">
+                  <Link to='/admin/newProduct' className={`nav-menu__link ${activeNav === 'addProduct' && 'nav-menu__link--active'}`} onClick={() => setActiveNav('addProduct')} href="#">
                     <span className="nav-menu__span">Добавить товар</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-menu__items">
-                  <a className="nav-menu__link" href="#">
+                  <Link to='/admin/productList'className={`nav-menu__link ${activeNav === 'productList' && 'nav-menu__link--active'}`} onClick={() => setActiveNav('productList')} href="#">
                     <span className="nav-menu__span">Список товаров</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-menu__items">
-                  <a className="nav-menu__link" href="#">
+                  <Link to='/admin/orders' className={`nav-menu__link ${activeNav === 'orders' && 'nav-menu__link--active'}`} onClick={() => setActiveNav('orders')} href="#">
                     <span className="nav-menu__span">Заказы</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

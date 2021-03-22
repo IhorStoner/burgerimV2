@@ -7,6 +7,6 @@ export default () => {
     middleware: getDefaultMiddleware().concat([
       
     ]),
-    devTools: false,
+    devTools: true,
   })
 };
