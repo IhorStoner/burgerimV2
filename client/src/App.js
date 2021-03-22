@@ -11,7 +11,6 @@ function App() {
   const { token, login, logout, userId, ready } = useAuth();
   const isAuthenticated = !!token
 
-  
   return (
     <Provider store={store} className="App">
       <AuthContext.Provider value={{ token, login, logout, userId, ready, isAuthenticated }}>

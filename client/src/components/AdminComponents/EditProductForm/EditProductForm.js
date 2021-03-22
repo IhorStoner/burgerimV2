@@ -1,20 +1,14 @@
 import React, { useState, useCallback } from 'react'
-import './AddProductForm.scss'
+import './EditProductForm.scss'
 import { ReactComponent as CloseIcon } from '../../../assets/svg/btnClose.svg'
 import { ReactComponent as AddPhotoIcon } from '../../../assets/svg/addPhotobtn.svg'
 import axios from 'axios'
 import config from '../../../config.json'
 
-export default function AddProductForm() {
-  const [result, setResult] = useState({
-    title: '',
-    description: '',
-    category: '',
-    price: '',
-    view: '',
-  })
-  const [images, setImages] = useState([])
-  const [isSuccess,setIsSuccess] = useState(false)
+export default function EditProductForm({ product }) {
+  const [result, setResult] = useState(product)
+  const [images, setImages] = useState('')
+  const [isSuccess, setIsSuccess] = useState(false)
   const [warning, setWarning] = useState(false)
 
   async function wrap(ev, cb) {
@@ -24,8 +18,6 @@ export default function AddProductForm() {
     btn.setAttribute('disabled', true);
 
     const formData = getFormData();
-    // [...images].map(img => formData.append('pictures', img))
-    // console.log(formData)
 
     let json;
     try {
@@ -72,24 +64,27 @@ export default function AddProductForm() {
 
 
   const onSubmit = useCallback(async (ev) => {
+    const { _id, ...updateData } = result
     const resultImg = await submitAxios(ev)
-    const finnalyData = result
-    finnalyData.images = resultImg
-    await axios.post(`${config.serverUrl}/api/products/newProduct`, finnalyData).then(res => {
+    updateData.images = resultImg
+
+
+    await axios.put(`${config.serverUrl}/api/products/update/${product._id}`, updateData).then(res => {
       setIsSuccess(true)
-      setTimeout(() => setIsSuccess(false),1000)
+      setTimeout(() => setIsSuccess(false), 1000)
     }).catch(err => {
       setWarning(true)
-      setTimeout(() => setWarning(false),1000)
+      setTimeout(() => setWarning(false), 1000)
     })
 
   }, [result])
 
+
   return (
     <div className="container">
-      {isSuccess && <div>Успешно добавлено</div>}
+      {isSuccess && <div>Успешно обновлено</div>}
       {warning && <div>Что-то пошло не так</div>}
-      <form className='addProduct' method="post" action="/upload" enctype="multipart/form-data" id='exampleForm'>
+      <form className='addProduct' method="post" action="/upload" encType="multipart/form-data" id='exampleForm'>
         <div className='addProduct__container'>
           <p className="addProduct__text">
             Фото:
@@ -99,14 +94,25 @@ export default function AddProductForm() {
               <AddPhotoIcon />
               <input className='addProduct__inputFile' id='pictures' name='pictures' accept="image/*" type="file" onChange={(e) => onChangeFiles(e.target.files)} />
             </label>
-            {[...images].map((file, i) =>
+            {images && [...images].map((file, i) =>
               <div key={i} className="addProduct__imgContainer">
-                <button type='button' className="addProduct__btnDelImg" onClick={() => setImages([])}>
+                <button type='button' className="addProduct__btnDelImg" onClick={() => setImages('')}>
                   <CloseIcon className='addProduct__iconDel' />
                 </button>
                 <img src={URL.createObjectURL(file)} className='addProduct__imgItem'></img>
               </div>
             )}
+            {
+              !images && result.images.map((img, i) => (
+                <div key={i} className="addProduct__imgContainer">
+                  <button type='button' className="addProduct__btnDelImg" onClick={() => setResult({ ...result, images: [] })}>
+                    <CloseIcon className='addProduct__iconDel' />
+                  </button>
+                  <img className='addProduct__imgItem' src={`${config.serverUrl}/api/images/${img}`} alt={product.title} />
+                </div>
+              ))
+
+            }
           </div>
         </div>
         <div className='addProduct__container'>
@@ -115,44 +121,44 @@ export default function AddProductForm() {
         </div>
         <div className='addProduct__container'>
           <p>Описание:</p>
-          <input type="text" onChange={(e) => setResult({ ...result, description: e.target.value })}/>
+          <input type="text" value={result.description} onChange={(e) => setResult({ ...result, description: e.target.value })} />
         </div>
         <div className='addProduct__container'>
           <p>Категория:</p>
           <label htmlFor='burgers' className="addProduct__radioContainer">
-            <input name='category' id='burgers' type="radio" value='burgers' onChange={(e) => setResult({ ...result, category: e.target.value })}/>
+            <input name='category' checked={result.category === 'burgers'} id='burgers' type="radio" value='burgers' onChange={(e) => setResult({ ...result, category: e.target.value })} />
             <span>Бургеры</span>
           </label>
           <label htmlFor='sandwiches' className="addProduct__radioContainer">
-            <input name='category' id='sandwiches' type="radio" value='sandwiches' onChange={(e) => setResult({ ...result, category: e.target.value })}/>
+            <input name='category' checked={result.category === 'sandwiches'} id='sandwiches' type="radio" value='sandwiches' onChange={(e) => setResult({ ...result, category: e.target.value })} />
             <span>Сэндвичи</span>
           </label>
           <label htmlFor='garnish' className="addProduct__radioContainer">
-            <input name='category' id='garnish' value='garnish' type="radio" onChange={(e) => setResult({ ...result, category: e.target.value })}/>
+            <input name='category' checked={result.category === 'garnish'} id='garnish' value='garnish' type="radio" onChange={(e) => setResult({ ...result, category: e.target.value })} />
             <span>Гарниры</span>
           </label>
           <label htmlFor='drinks' className="addProduct__radioContainer">
-            <input name='category' id='drinks' value='drinks' type="radio" onChange={(e) => setResult({ ...result, category: e.target.value })}/>
+            <input name='category' checked={result.category === 'drinks'} id='drinks' value='drinks' type="radio" onChange={(e) => setResult({ ...result, category: e.target.value })} />
             <span>Напитки</span>
           </label>
           <label htmlFor='sales' className="addProduct__radioContainer">
-            <input name='category' id='sales' type="radio" value='sales' onChange={(e) => setResult({ ...result, category: e.target.value })}/>
+            <input name='category' checked={result.category === 'sales'} id='sales' type="radio" value='sales' onChange={(e) => setResult({ ...result, category: e.target.value })} />
             <span>Акции</span>
           </label>
         </div>
         <div className='addProduct__container'>
           <p>Цена:</p>
-          <input type="number" onChange={(e) => setResult({ ...result, price: e.target.value })}/>
+          <input type="number" value={result.price} onChange={(e) => setResult({ ...result, price: e.target.value })} />
           <span>грн</span>
         </div>
         <div className='addProduct__container'>
           <p>Отображать:</p>
           <label htmlFor='viewYes' className="addProduct__radioContainer">
-            <input name='view' id='viewYes' value='yes' type="radio" onChange={(e) => setResult({ ...result, view: e.target.value })}/>
+            <input name='view' id='viewYes' checked={result.view === 'yes'} value='yes' type="radio" onChange={(e) => setResult({ ...result, view: e.target.value })} />
             <span>Да</span>
           </label>
           <label htmlFor='viewNo' className="addProduct__radioContainer">
-            <input name='view' id='viewNo' value='no' type="radio" onChange={(e) => setResult({ ...result, view: e.target.value })}/>
+            <input name='view' id='viewNo' checked={result.view === 'no'} value='no' type="radio" onChange={(e) => setResult({ ...result, view: e.target.value })} />
             <span>Нет</span>
           </label>
         </div>

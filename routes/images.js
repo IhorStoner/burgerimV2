@@ -38,7 +38,7 @@ ImgRouter.use('/', express.static(FILESTORAGE))
 
 
 ImgRouter.post(
-  '/',
+  '/upload',
   async (req, res) => {
     try {
       await formUpload(req, res)
@@ -57,6 +57,7 @@ ImgRouter.post(
     }
   }
 );
+
 
 ImgRouter.delete('/:imgId',async (req,res) => {
   const imgId = req.params.imgId

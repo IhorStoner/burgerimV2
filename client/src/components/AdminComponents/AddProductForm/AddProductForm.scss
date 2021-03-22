@@ -41,11 +41,19 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: transparent;
     border: none;
     outline: none;
+    cursor: pointer;
+    
+  }
+
+  &__iconDel {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   &__radioContainer {
@@ -60,5 +68,10 @@
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
+    outline: none;
+  }
+
+  &__imgContainer {
+    position: relative;
   }
 }

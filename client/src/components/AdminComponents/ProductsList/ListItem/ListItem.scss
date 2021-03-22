@@ -1,0 +1,23 @@
+.listItem {
+  display: grid;
+  grid-template-columns: 100px 230px 330px 120px 205px 100px 60px 60px;
+  border: 1px solid #8B8B8B;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  &__img {
+    width: 95px;
+    height: 95px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #8B8B8B;
+
+    &--bold {
+      font-weight: bold;
+    }
+  }
+}

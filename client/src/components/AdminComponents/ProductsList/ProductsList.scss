@@ -1,0 +1,7 @@
+.productsList {
+  &__header {
+    display: grid;
+    grid-template-columns: 100px 230px 330px 120px 205px 100px 60px 60px;
+    margin-bottom: 1%;
+  }
+}
