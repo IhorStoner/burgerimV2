@@ -28,7 +28,6 @@ export default function Homepage(){
       <footer className="s-footer">
         <Footer/>
       </footer>
-      
     </section>
   )
 }
