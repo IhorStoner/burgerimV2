@@ -8,8 +8,11 @@ function ShoppingCart(){
                 <div className="shopping-cart">
                     <div className="shopping-cart__place">
                         <div className="shopping-cart__count">
-                            <svg width="140" height="140" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M69.9163 139.833C108.53 139.833 139.833 108.53 139.833 69.9163C139.833 31.3026 108.53 0 69.9163 0C31.3026 0 0 31.3026 0 69.9163C0 108.53 31.3026 139.833 69.9163 139.833Z" fill="#72B847"/>
+                            <div className="shopping-cart__digit">
+                                <span className="shopping-cart__latter">23</span>
+                            </div>
+                            <svg className="shopping-cart__bays" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path className="shopping-cart__circle" d="M69.9163 139.833C108.53 139.833 139.833 108.53 139.833 69.9163C139.833 31.3026 108.53 0 69.9163 0C31.3026 0 0 31.3026 0 69.9163C0 108.53 31.3026 139.833 69.9163 139.833Z" />
                                 <path d="M122.347 54.5196V50.0459C122.347 49.2688 121.717 48.639 120.94 48.639H18.8922C18.1152 48.639 17.4854 49.2688 17.4854 50.0459V54.5196C17.4854 55.2966 18.1152 55.9265 18.8922 55.9265H120.94C121.717 55.9265 122.347 55.2966 122.347 54.5196Z" fill="white"/>
                                 <path d="M63.8275 22.3369C64.2181 21.2418 63.6467 20.0372 62.5514 19.6469L57.9808 18.0177C56.8855 17.6272 55.6812 18.1986 55.2909 19.2939L46.1542 44.9235H55.776L63.8275 22.3369Z" fill="white"/>
                                 <path d="M84.2883 44.9234H93.91L84.7733 19.2934C84.3828 18.1984 83.1785 17.627 82.0834 18.0173L77.5128 19.6465C76.4175 20.037 75.8464 21.2414 76.2367 22.3365L84.2883 44.9234Z" fill="white"/>
@@ -19,8 +22,9 @@ function ShoppingCart(){
                             </svg>
                         </div>
                         <div className="shopping-cart__order">
-                            <svg width="303" height="90" viewBox="0 0 303 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M257.788 0H0C8.24524 13.0325 13.0161 28.4615 13.0161 45C13.0161 61.5385 8.24524 76.9675 0 90H257.788C282.758 90 303 69.8528 303 45C303 20.1472 282.757 0 257.788 0Z" fill="#72B847"/>
+                            <span className="shopping-cart__span">Оформить заказ</span>
+                            <svg className="shopping-cart__orders" viewBox="0 0 303 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path className="shopping-cart__square" d="M257.788 0H0C8.24524 13.0325 13.0161 28.4615 13.0161 45C13.0161 61.5385 8.24524 76.9675 0 90H257.788C282.758 90 303 69.8528 303 45C303 20.1472 282.757 0 257.788 0Z" />
                             </svg>
                         </div>
                     </div>

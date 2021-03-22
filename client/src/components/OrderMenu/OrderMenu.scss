@@ -2,10 +2,12 @@
     max-width: 1400px;
     display: flex;
     margin: 0 -10px;
+    justify-content: center;
     &__link{
         margin: 0 10px;
         text-decoration: none;
         position: relative;
+        
         &::before, &::after{
             content: "";
             position: absolute;
@@ -47,5 +49,36 @@
         fill: #8F1625;
         transition: fill .25s linear;
     }
-
+    &__mobile-show{
+        display: none;
+    }
 }
+
+@media screen and (max-width: 1440px){
+    .order-menu__span{
+        font-size: 27px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .order-menu__span{
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 998px){
+    .order-menu{
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .order-menu__mobile-show{
+        display: block;
+    }
+    // .order-menu__link{
+    //     max-width: 248px;
+    //     height: auto;
+    // }
+}
+
+

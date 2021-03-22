@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header';
 import OrderMenu from '../../components/OrderMenu/OrderMenu';
 import CartGoods from '../../components/CartGoods/CartGoods';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
+import Footer from '../../components/Footer/Footer';
 
 export default function Homepage(){
   return (
@@ -23,7 +24,10 @@ export default function Homepage(){
       </div>
       <div className="s-home__shopping-cart">
         <ShoppingCart/>
-      </div>  
+      </div>
+      <footer className="s-footer">
+        <Footer/>
+      </footer>
       
     </section>
   )
