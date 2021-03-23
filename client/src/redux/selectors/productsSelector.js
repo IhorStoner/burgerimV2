@@ -11,6 +11,11 @@ export const getPages = createSelector(
 );
 
 export const getCategories = createSelector(
-  state => state.products.categories,
+  state => state.products.category,
   categories => categories
+);
+
+export const getCheckout = createSelector(
+  state => state.products.isOpenCheckout,
+  isOpen => isOpen
 );

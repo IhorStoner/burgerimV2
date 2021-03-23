@@ -1,0 +1,44 @@
+.checkoutItem {
+  display: grid;
+  grid-template-columns: 210px 90px 90px 100px 15px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 10px;
+
+  &__btn {
+    background-color: #c4c4c4;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 23px;
+    height: 23px;
+
+    &:first-child {
+      margin-right: 5px;
+    }
+    &:last-child {
+      margin-left: 5px;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &__btnDel {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+
+  // &__btnContainer {
+  //   display: flex;
+  // }
+}
