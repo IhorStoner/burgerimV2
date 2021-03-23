@@ -3,12 +3,13 @@ import './OrderMenu.scss';
 import MenuLink from './container/MenuLink';
 
 export default function OrderMenu() {
+ 
   const list = [
     { name: "burgers", label: "Бургеры" },
     { name: "sandwiches", label: "Сэндвичи" },
-    { name: "sidedishes", label: "Гарниры" },
-    { name: "drink", label: "Напитки" },
-    { name: "promotions", label: "Акции" },
+    { name: "garnish", label: "Гарниры" },
+    { name: "drinks", label: "Напитки" },
+    { name: "sales", label: "Акции" },
   ]
 
   const fullmenu = list.map((el, i) => (<MenuLink

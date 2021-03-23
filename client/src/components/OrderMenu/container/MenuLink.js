@@ -31,5 +31,3 @@ function MenuLink(props){
         </React.Fragment>
     )
 }
-
-export default MenuLink;

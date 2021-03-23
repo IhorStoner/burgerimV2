@@ -13,3 +13,6 @@ export const getCategory = createAsyncThunk('products/category', async (name) =>
     res => res.data)
   return data;
 });
+
+export const setIsOpenCheckout = createAction('SET_IS_OPEN_CHECKOUT')
+

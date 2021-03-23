@@ -24,7 +24,7 @@ productsRouter.get('/:page', async (req, res) => {
 
 productsRouter.get('/categories/:name', async (req, res) => {
   const name = req.params.name;
-  const products = await ProductModel.find({category: name})
+  const products = await ProductModel.find({ category: name })
 
   if (products.length) {
     res.status(201).send(products)
@@ -74,7 +74,7 @@ productsRouter.delete('/:id', async (req, res) => {
 
 productsRouter.get('/categories/:name', async (req, res) => {
   const name = req.params.name;
-  const products = await ProductModel.find({category: name})
+  const products = await ProductModel.find({ category: name })
   if (products.length) {
     res.status(201).send(products)
   } else {

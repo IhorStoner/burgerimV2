@@ -14,3 +14,8 @@ export const getCategories = createSelector(
   state => state.products.category,
   category => category
 );
+
+export const getCheckout = createSelector(
+  state => state.products.isOpenCheckout,
+  isOpen => isOpen
+);
