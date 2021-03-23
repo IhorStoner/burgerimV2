@@ -39,5 +39,15 @@ productsRouter.post('/newProduct', async (req, res) => {
   }
 })
 
+productsRouter.get('/categories/:name', async (req, res) => {
+  const name = req.params.name;
+  const products = await ProductModel.find({category: name})
+  if (products.length) {
+    res.status(201).send(products)
+  } else {
+    res.status(400).send('products not found')
+  }
+})
+
 
 module.exports = productsRouter;

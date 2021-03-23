@@ -9,22 +9,22 @@ import Phone from '../../assets/svg/phone.svg';
 export default function Header(){
     const [state,setState] = useState({
       menuOpen: false,
-
     })
 
     const humburgerOn = (e) => {
       if(state.menuOpen){
-        setState((prevState) => {return {...prevState,  menuOpen: false}})
+        e.currentTarget.classList.remove("nav-menu__cell-humburger--to-x");
+        setState((prevState) => {return {...prevState,  menuOpen: false}});
       }else{
-        setState((prevState) => {return {...prevState,  menuOpen: true}})
+        e.currentTarget.classList.add("nav-menu__cell-humburger--to-x");
+        setState((prevState) => {return {...prevState,  menuOpen: true}});
       }
-      
     }
 
     return (
     <React.Fragment>
         <nav className="nav-menu">
-          <div onClick={humburgerOn} className="nav-menu__cell-humburger nav-menu__cell-humburger--to-x">
+          <div onClick={humburgerOn} className="nav-menu__cell-humburger">
             <div className="nav-menu__humburger"></div>
             {state.menuOpen && (
               <>

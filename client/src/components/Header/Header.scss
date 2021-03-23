@@ -116,48 +116,48 @@
         margin: 3px auto;
         display: none;
         &--to-x{
-            .nav-menu__humburger{
-                animation: "middleline" .5s ease-in-out forwards;
-                &::before{
-                    animation: "upline" .5s ease-in-out forwards;
-                }
-                &::after{
-                    animation: "bottomline" .5s ease-in-out forwards;
-                }
-            }
+					.nav-menu__humburger{
+						animation: middleline .5s ease-in-out forwards;
+						&::before{
+								animation: upline .5s ease-in-out forwards;
+						}
+						&::after{
+								animation: bottomline .5s ease-in-out forwards;
+						}
+					}
         }
     }
     &__humburger{
-        height: 4px;
-        width: 28px;
-        border-radius: 30px;
-        background-color: #000;
-        position: absolute;
-        display: block;
-        top: 50%;
-        left: 0;
-        right: 0;
-        transform: translateY(-50%);
-        animation: "backline" .5s ease;
-        &::before, &::after{
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 4px;
-            width: 100%;
-            background-color: #000;
-            border-radius: 30px;
-        }
-        &::before{
-            top: -8px;
-            animation: "topline" .5s ease;
-        }
-        &::after{
-            content: "";
-            bottom: -8px;
-            animation: "endline" .5s ease;
-        }
+			height: 4px;
+			width: 28px;
+			border-radius: 30px;
+			background-color: #000;
+			position: absolute;
+			display: block;
+			top: 50%;
+			left: 0;
+			right: 0;
+			transform: translateY(-50%);
+			animation: backline .5s ease forwards;
+			&::before, &::after{
+					content: "";
+					position: absolute;
+					left: 0;
+					right: 0;
+					height: 4px;
+					width: 100%;
+					background-color: #000;
+					border-radius: 30px;
+			}
+			&::before{
+					// top: -2px;
+					animation: topline .5s ease forwards;
+			}
+			&::after{
+					content: "";
+					// bottom: -2px;
+					animation: endline .5s ease forwards;
+			}
     }
     &__moble-close{
         position: fixed;
@@ -249,6 +249,18 @@
     }
 }
 
+@keyframes backline{
+	0%{
+		background-color: transparent
+	}
+	40%{
+		background-color: transparent;
+	}
+	100%{
+		background-color: #000;
+	}
+}
+
 @keyframes topline{
     0%{
         bottom: 0;
@@ -263,7 +275,7 @@
         transform: rotate(0);
     }
     100%{
-        bottom: 10px;
+        bottom: 8px;
         transform: rotate(0);
     }	
 }
@@ -286,7 +298,7 @@
         transform: rotate(0);
     }
     100%{
-        bottom: 0;
+        bottom: 2px;
         transform: rotate(-45deg);
     }
 }
@@ -378,6 +390,7 @@
         display: block;
     }
 }
+
 
 
 
