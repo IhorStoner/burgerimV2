@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Homepage.scss';
 import Header from '../../components/Header/Header';
 import OrderMenu from '../../components/OrderMenu/OrderMenu';
@@ -6,7 +6,12 @@ import CartGoods from '../../components/CartGoods/CartGoods';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 import Footer from '../../components/Footer/Footer';
 
-export default function Homepage(){
+export default function Homepage(props){
+  useEffect(() => {
+
+    // console.log(props)
+    //this request to server behind goods
+  })
   return (
     <section className="s-home">
       <div className="s-home__container">
