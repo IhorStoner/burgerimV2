@@ -6,8 +6,6 @@ import CartGoods from '../../components/CartGoods/CartGoods';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 import Footer from '../../components/Footer/Footer';
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { getCategory } from '../../redux/actions/productsAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCart } from '../../redux/selectors/cartSelector';
 import axios from 'axios';
@@ -55,14 +53,6 @@ export default function Homepage(props) {
     
         <div id="cart-goods" className="s-home__cart-goods">
           <CartGoods/>
-        </div>
-    
-        <div className="s-home__order-menu">
-          <OrderMenu />
-        </div>
-    
-        <div className="s-home__cart-goods">
-          <CartGoods />
         </div>
 
       </div>

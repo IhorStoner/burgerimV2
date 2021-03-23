@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { getCategories } from '../../../redux/selectors/productsSelector';
 import SingleCart from '../../CartGoods/container/SinleCart'
 
-function MenuLink(props){
+export default function MenuLink(props){
     const { name, label, open, openClose } = props;
     const [state, setState] = useState({
         listProdux: []
