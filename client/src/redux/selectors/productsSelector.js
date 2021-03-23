@@ -11,6 +11,6 @@ export const getPages = createSelector(
 );
 
 export const getCategories = createSelector(
-  state => state.products.categories,
-  categories => categories
+  state => state.products.category,
+  category => category
 );

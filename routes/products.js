@@ -69,6 +69,8 @@ productsRouter.delete('/:id', async (req, res) => {
     res.status(201).send('success')
   } catch (e) {
     res.status(400).send(e)
+  }
+})
 
 productsRouter.get('/categories/:name', async (req, res) => {
   const name = req.params.name;

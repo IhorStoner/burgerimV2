@@ -1,10 +1,12 @@
-import React from 'react';
+import React ,{useRef} from 'react';
 import './ShoppingCart.scss';
 
 function ShoppingCart(){
+
+
     return (
         <React.Fragment>
-            <div className="shopping-cart">
+            <div id="shopping-cart" className="shopping-cart shopping-cart--fixed">
                 <div className="shopping-cart">
                     <div className="shopping-cart__place">
                         <div className="shopping-cart__count">

@@ -12,17 +12,17 @@ function Footer(){
                     <nav className="nav-menu nav-menu--scope nav-menu--margintop nav-menu--line">
                         <ul className="nav-menu__list">
                             <li className="nav-menu__items">
-                            <a className="nav-menu__link nav-menu__link--white nav-menu__link--size nav-menu__link--active" href="#">
+                            <a className="nav-menu__link nav-menu__link--foter nav-menu__link--white nav-menu__link--size nav-menu__link--active" href="#">
                                 <span className="nav-menu__span">О Нас</span>
                             </a>
                             </li>
                             <li className="nav-menu__items">
-                            <a className="nav-menu__link nav-menu__link--white nav-menu__link--size" href="#">
+                            <a className="nav-menu__link nav-menu__link--foter nav-menu__link--white nav-menu__link--size" href="#">
                                 <span className="nav-menu__span">Доставка и оплата</span>
                             </a>
                             </li>
                             <li className="nav-menu__items">
-                            <a className="nav-menu__link nav-menu__link--white nav-menu__link--size" href="#">
+                            <a className="nav-menu__link nav-menu__link--foter nav-menu__link--white nav-menu__link--size" href="#">
                                 <span className="nav-menu__span">Отзывы</span>
                             </a>
                             </li>
@@ -31,7 +31,7 @@ function Footer(){
                     <div className="contanct contanct--line contanct--scope">
                         <div className="contanct__area">
                             <span className="contanct__span contanct__span--flex">
-                                <a className="contanct__phone contanct__phone--white contanct__phone--shift" href="tel:380 96 513 66 94"><img className="contanct__call contanct__call--shift" src={WhitePhone} alt="phone"/>+380 96 513 66 94</a>
+                                <a className="contanct__phone contanct__phone__footer contanct__phone--white contanct__phone--shift" href="tel:380 96 513 66 94"><img className="contanct__call contanct__call--shift" src={WhitePhone} alt="phone"/>+380 96 513 66 94</a>
                                 <a href="#" className="contanct__social"><img src={WhiteFace} alt="facebook" /></a>
                                 <a href="#" className="contanct__social"><img src={WhiteInst} alt="instagram" /></a>
                             </span>
