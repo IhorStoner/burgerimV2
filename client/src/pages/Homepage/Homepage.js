@@ -5,6 +5,9 @@ import OrderMenu from '../../components/OrderMenu/OrderMenu';
 import CartGoods from '../../components/CartGoods/CartGoods';
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 import Footer from '../../components/Footer/Footer';
+import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getCategory } from '../../redux/actions/productsAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCart } from '../../redux/selectors/cartSelector';
 import axios from 'axios';
@@ -13,7 +16,6 @@ import { getCheckout } from '../../redux/selectors/productsSelector';
 import CheckoutPopup from '../../components/CheckoutPopup/CheckoutPopup'
 import { setIsOpenCheckout } from '../../redux/actions/productsAction';
 import { getCategory } from '../../redux/actions/productsAction';
-import { useParams } from 'react-router-dom'
 
 export default function Homepage(props) {
   const cart = useSelector(getCart)
@@ -46,9 +48,19 @@ export default function Homepage(props) {
         <div className="s-home__head">
           <Header />
         </div>
+    
+        <div id="order-menu" className="s-home__order-menu">
+          <OrderMenu/>
+        </div>
+    
+        <div id="cart-goods" className="s-home__cart-goods">
+          <CartGoods/>
+        </div>
+    
         <div className="s-home__order-menu">
           <OrderMenu />
         </div>
+    
         <div className="s-home__cart-goods">
           <CartGoods />
         </div>
@@ -57,9 +69,11 @@ export default function Homepage(props) {
       <div className="s-home__shopping-cart" >
         <ShoppingCart cart={cart}  handleCheckout={handleCheckout}/>
       </div>
-      <footer className="s-footer">
-        <Footer />
+    
+      <footer className="s-footer"  id="footer" >
+        <Footer/>
       </footer>
+
     </section>
   )
 }

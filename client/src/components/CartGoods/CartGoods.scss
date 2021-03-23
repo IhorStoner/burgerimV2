@@ -75,6 +75,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        outline: none;
+        border: none;
+        display: inline-block;
+        max-width: 40px;
+        text-align: center;
     }
     &__change-select{
         display: inline-block;
@@ -127,5 +132,17 @@
         width: auto;
         object-fit: cover;
         height: 100%;
+    }
+    &__picture{
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width: 998px){
+    .cart-goods{
+        display: none;
     }
 }

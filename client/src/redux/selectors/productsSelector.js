@@ -12,7 +12,7 @@ export const getPages = createSelector(
 
 export const getCategories = createSelector(
   state => state.products.category,
-  categories => categories
+  category => category
 );
 
 export const getCheckout = createSelector(

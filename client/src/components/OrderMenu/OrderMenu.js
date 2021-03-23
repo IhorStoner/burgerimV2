@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './OrderMenu.scss';
 import MenuLink from './container/MenuLink';
 
-
 export default function OrderMenu() {
  
   const list = [
@@ -12,9 +11,6 @@ export default function OrderMenu() {
     { name: "drinks", label: "Напитки" },
     { name: "sales", label: "Акции" },
   ]
-
-
-
 
   const fullmenu = list.map((el, i) => (<MenuLink
     key={el.name + i}
