@@ -3,7 +3,7 @@ import './ListItem.scss'
 import config from '../../../../config.json'
 import { Link } from 'react-router-dom'
 
-export default function ListItem({product,setActiveNav,setEditProduct}) {
+export default function ListItem({product,setActiveNav,setEditProduct,handleCheckboxClick,handleDeleteProduct}) {
 
   const handleEditClick = () => {
     setActiveNav('edit')
@@ -17,9 +17,9 @@ export default function ListItem({product,setActiveNav,setEditProduct}) {
       <div className='listItem__item'>{product.description}</div>
       <div className='listItem__item'>{product.category}</div>
       <div className='listItem__item'>{product.price}</div>
-      <div className='listItem__item'><input type="checkbox" checked={product.view} name="view" id="view"/></div>
+      <div className='listItem__item'><input type="checkbox" checked={product.view === 'yes'} name="view" id="view" onClick={() => handleCheckboxClick(product._id,product.view)}/></div>
       <div className='listItem__item'><Link to={`/admin/edit/${product._id}`} onClick={() => handleEditClick()} >edit</Link></div>
-      <div className='listItem__item'><button>del</button></div>
+      <div className='listItem__item'><button onClick={() => handleDeleteProduct(product._id)}>del</button></div>
     </div>
   )
 }

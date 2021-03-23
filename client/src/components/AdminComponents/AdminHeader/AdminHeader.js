@@ -16,17 +16,17 @@ export default function AdminHeader({activeNav,setActiveNav}) {
             <nav className="nav-menu">
               <ul className="nav-menu__list">
                 <li className="nav-menu__items">
-                  <Link to='/admin/newProduct' className={`nav-menu__link ${activeNav === 'addProduct' && 'nav-menu__link--active'}`} onClick={() => setActiveNav('addProduct')} href="#">
+                  <Link to='/admin/newProduct' className={`nav-menu__link ${activeNav === 'newProduct' && 'nav-menu__link--active'}`} >
                     <span className="nav-menu__span">Добавить товар</span>
                   </Link>
                 </li>
                 <li className="nav-menu__items">
-                  <Link to='/admin/productList'className={`nav-menu__link ${activeNav === 'productList' && 'nav-menu__link--active'}`} onClick={() => setActiveNav('productList')} href="#">
+                  <Link to='/admin/productList'className={`nav-menu__link ${activeNav === 'productList' && 'nav-menu__link--active'}`} >
                     <span className="nav-menu__span">Список товаров</span>
                   </Link>
                 </li>
                 <li className="nav-menu__items">
-                  <Link to='/admin/orders' className={`nav-menu__link ${activeNav === 'orders' && 'nav-menu__link--active'}`} onClick={() => setActiveNav('orders')} href="#">
+                  <Link to='/admin/orders' className={`nav-menu__link ${activeNav === 'orders' && 'nav-menu__link--active'}`} >
                     <span className="nav-menu__span">Заказы</span>
                   </Link>
                 </li>
