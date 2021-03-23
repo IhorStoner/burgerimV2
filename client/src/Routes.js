@@ -15,9 +15,10 @@ export default function Routes() {
         <Route path="/admin">
           <AdminPage />
         </Route>
-        <Route path="/" exact>
+        <Route path={["/home/:name", "/home/burgers"]} exact>
           <Homepage />
         </Route>
+        <Redirect from="/" to="/home/burgers"/>
       </Switch>
     </Router>
   )

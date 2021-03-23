@@ -60,6 +60,7 @@ productsRouter.post('/newProduct', async (req, res) => {
   }
 })
 
+
 productsRouter.delete('/:id', async (req, res) => {
   const id = req.params.id
 
@@ -68,6 +69,14 @@ productsRouter.delete('/:id', async (req, res) => {
     res.status(201).send('success')
   } catch (e) {
     res.status(400).send(e)
+
+productsRouter.get('/categories/:name', async (req, res) => {
+  const name = req.params.name;
+  const products = await ProductModel.find({category: name})
+  if (products.length) {
+    res.status(201).send(products)
+  } else {
+    res.status(400).send('products not found')
   }
 })
 
