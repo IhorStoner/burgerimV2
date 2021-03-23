@@ -9,6 +9,9 @@ export default function Routes() {
   return (
     <Router>
       <Switch>
+        <Route path="/admin/:nav">
+          <AdminPage />
+        </Route>
         <Route path="/admin">
           <AdminPage />
         </Route>

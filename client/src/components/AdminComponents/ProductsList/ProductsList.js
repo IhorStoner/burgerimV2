@@ -5,8 +5,10 @@ import { fetchProducts } from '../../../redux/actions/productsAction'
 import { getProducts, getPages } from '../../../redux/selectors/productsSelector'
 import ListItem from './ListItem/ListItem'
 import Pagination from './Pagination/Pagination'
+import axios from 'axios'
+import config from '../../../config.json'
 
-export default function ProductList({setActiveNav,setEditProduct}) {
+export default function ProductList({ setActiveNav, setEditProduct }) {
   const dispatch = useDispatch()
   const products = useSelector(getProducts)
   const pages = useSelector(getPages)
@@ -30,6 +32,15 @@ export default function ProductList({setActiveNav,setEditProduct}) {
     dispatch(fetchProducts(page))
   }, [page])
 
+  const handleCheckboxClick = async (_id, currentValue) => {
+    const val = currentValue === 'yes' ? 'no' : 'yes'
+    await axios.put(`${config.serverUrl}/api/products/view/${_id}`, { view: val }).then((res) => dispatch(fetchProducts(page)))
+  }
+
+  const handleDeleteProduct = async (_id) => {
+    await axios.delete(`${config.serverUrl}/api/products/${_id}`).then((res) => dispatch(fetchProducts(page)))
+  }
+
   return (
     <div className='productsList'>
       <div className="container">
@@ -44,7 +55,7 @@ export default function ProductList({setActiveNav,setEditProduct}) {
         {
           products &&
           products.map(product => (
-            <ListItem setActiveNav={setActiveNav} setEditProduct={setEditProduct} key={product._id} product={product} />
+            <ListItem handleCheckboxClick={handleCheckboxClick} handleDeleteProduct={handleDeleteProduct} setActiveNav={setActiveNav} setEditProduct={setEditProduct} key={product._id} product={product} />
           ))
         }
       </div>
