@@ -15,7 +15,7 @@ export default function SingleCart({ product, handleAddToCart }) {
   const increace = (e) => {
     if (item.count >= 99) return null;
     setItem((prevState) => {
-      const prevCount = prevState.count + 1;
+      const prevCount = ++ prevState.count;
       return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
     })
   }
@@ -23,7 +23,7 @@ export default function SingleCart({ product, handleAddToCart }) {
   const decreace = (e) => {
     if (item.count <= 1) return null;
     setItem((prevState) => {
-      const prevCount = prevState.count - 1;
+      const prevCount = prevState.count --;
       return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
     })
   }
@@ -47,7 +47,7 @@ export default function SingleCart({ product, handleAddToCart }) {
   return (
     <div className="cart-goods__elem">
       <div className="cart-goods__image-zone">
-        <img className="cart-goods__picture" src={`${config.serverUrl}/api/images/${item.images[0]}`} />
+        <img className="cart-goods__picture" src={`${config.serverUrl}/api/images/${product.images[0]}`} />
       </div>
       <div className="cart-goods__desc">
         <h4 className="cart-goods__h4">{product.title}</h4>
@@ -56,7 +56,7 @@ export default function SingleCart({ product, handleAddToCart }) {
       <div className="cart-goods__action">
         <span className="cart-goods__cost">{item.summ} грн</span>
         <div className="cart-goods__select">
-          <input ref={inpVal} onBlur={blur} onChange={change} className="cart-goods__reveal" value={item.count} />
+          <input ref={inpVal} onBlur={blur} maxLength="2" onChange={change} className="cart-goods__reveal" value={item.count} />
           <div className="cart-goods__change-select">
             <button onClick={increace} className="cart-goods__btn-change"><img src={AngleUp} alt="angle-up" /></button>
             <button onClick={decreace} className="cart-goods__btn-change"><img src={AngleDown} alt="angle-down" /></button>
