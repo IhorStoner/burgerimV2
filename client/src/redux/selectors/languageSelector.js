@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit'
 
-export const getLng = createSelector(
+export const getLanguage = createSelector(
   state => state.lng,
   lng => lng
 );
