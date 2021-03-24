@@ -7,11 +7,19 @@ const ProductSchema = new Schema({
     type: String,
     required: true,
   },
+  titleUKR: {
+    type: String,
+    required: true,
+  },
   images: {
     type: Array,
     required: true,
   },
   description: {
+    type: String,
+    required: true,
+  },
+  descriptionUKR: {
     type: String,
     required: true,
   },

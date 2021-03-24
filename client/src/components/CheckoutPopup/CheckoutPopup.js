@@ -22,6 +22,7 @@ export default function CheckoutPopup({ cart }) {
   const [isNameValid, setIsNameValid] = useState('')
   const [isPhoneValid, setIsPhoneValid] = useState('')
   const [isAddressValid, setIsAddressValid] = useState('')
+  const [loading,setLoading] = useState(false)
 
   useEffect(() => {
     const totalSum = cart.reduce((totalSum, currentItem) => +totalSum + (+currentItem.count) * (+currentItem.price), 0)
@@ -44,11 +45,14 @@ export default function CheckoutPopup({ cart }) {
     checkValid()
    
     if (isNameValid && isPhoneValid && isAddressValid) {
+      setLoading(true)
       const result = await axios.post(`${config.serverUrl}/api/mail`, order).then(res => {
+        setLoading(false)
         setSuccess(true)
         dispatch(resetCart())
       }).catch(err => {
         setError(true)
+        setLoading(false)
       })
     }
 
@@ -88,7 +92,9 @@ export default function CheckoutPopup({ cart }) {
           </div>
           <div className="checkout__btnContainer">
             <button type='button' className="checkout__btnSubmit" onClick={() => onSubmitOrder()}>Оформить</button>
+       
           </div>
+         
         </div>
       }
     </div>

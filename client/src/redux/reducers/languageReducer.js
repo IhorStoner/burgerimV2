@@ -2,7 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 import { changeLanguage } from '../actions/languageAction'
 
 const initialState = {
-  lng: 'RU'
+  lng: 'RUS'
 };
 
 const languageReducer = createReducer(initialState, {
