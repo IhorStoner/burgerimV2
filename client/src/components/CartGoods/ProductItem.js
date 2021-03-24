@@ -27,8 +27,8 @@ export default function ProductItem({ product,handleAddToCart }) {
         <img className="cart-goods__picture" src={`${config.serverUrl}/api/images/${product.images[0]}`} />
       </div>
       <div className="cart-goods__desc">
-        <h4 className="cart-goods__h4">Чікен бургер</h4>
-        <span className="cart-goods__text">Бургер с куриной котлетой и нежной булочкой.</span>
+        <h4 className="cart-goods__h4">{product.title}</h4>
+        <span className="cart-goods__text">{product.description}</span>
       </div>
       <div className="cart-goods__action">
         <span className="cart-goods__cost">30 грн</span>
