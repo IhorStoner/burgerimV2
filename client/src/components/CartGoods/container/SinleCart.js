@@ -56,7 +56,7 @@ export default function SingleCart({ product, handleAddToCart }) {
       <div className="cart-goods__action">
         <span className="cart-goods__cost">{item.summ} грн</span>
         <div className="cart-goods__select">
-          <input ref={inpVal} onBlur={blur} onChange={change} className="cart-goods__reveal" value={item.count} />
+          <input maxLength="2" ref={inpVal} onBlur={blur} onChange={change} className="cart-goods__reveal" value={item.count} />
           <div className="cart-goods__change-select">
             <button onClick={increace} className="cart-goods__btn-change"><img src={AngleUp} alt="angle-up" /></button>
             <button onClick={decreace} className="cart-goods__btn-change"><img src={AngleDown} alt="angle-down" /></button>
