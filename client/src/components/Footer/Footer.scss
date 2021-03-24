@@ -11,5 +11,35 @@
         font-size: 22px;
         line-height: 28px;
         color: #fff;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .nav-menu--footer{
+        display: none;
+    }
+    .contanct--scope{
+        max-width: 100%;
+    }
+    .contanct__span{
+        padding-right: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .footer{
+        padding: 10px 0;
+    }
+    .nav-menu--footer{
+        display: none;
+    }
+    .contanct__social{
+        display: none;
+    }
+    .contanct__phone--shift{
+        margin-right: 0;
     }
 }

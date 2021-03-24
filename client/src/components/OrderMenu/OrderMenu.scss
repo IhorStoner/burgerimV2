@@ -52,6 +52,11 @@
     &__mobile-show{
         display: none;
     }
+    &__contact{
+        display: none;
+        margin-bottom: 30px;
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 1440px){
@@ -75,10 +80,9 @@
     .order-menu__mobile-show{
         display: block;
     }
-    // .order-menu__link{
-    //     max-width: 248px;
-    //     height: auto;
-    // }
+    .order-menu__contact{
+        display: block;
+    }
 }
 
 

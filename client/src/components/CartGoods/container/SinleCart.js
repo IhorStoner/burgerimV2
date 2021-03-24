@@ -3,14 +3,15 @@ import AngleUp from '../../../assets/svg/angle-up.svg';
 import AngleDown from '../../../assets/svg/angle-down.svg';
 import config from '../../../config.json';
 
+
 export default function SingleCart({ product, handleAddToCart }) {
   const inpVal = useRef(null);
-
   const [item, setItem] = useState({
     ...product,
     count: 1,
     summ: product.price,
   })
+
   const increace = (e) => {
     if (item.count >= 99) return null;
     setItem((prevState) => {
@@ -18,6 +19,7 @@ export default function SingleCart({ product, handleAddToCart }) {
       return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
     })
   }
+
   const decreace = (e) => {
     if (item.count <= 1) return null;
     setItem((prevState) => {
@@ -30,14 +32,15 @@ export default function SingleCart({ product, handleAddToCart }) {
     const val = e.target.value;
     const didgit = parseInt(val);
     if (!isNaN(didgit)) {
-      setItem((prevState) => { return { ...prevState, count: didgit, summ: prevState.price * didgit } })
+      const checkZiro = didgit === 0 ? 1 : didgit;
+      setItem((prevState) => { return { ...prevState, count: checkZiro, summ: prevState.price * checkZiro } })
     } else if (val.trim() === "") {
       setItem((prevState) => { return { ...prevState, count: val } })
     }
   }
   const blur = (e) => {
     if (e.target.value.trim() === "") {
-      setItem((prevState) => { return { ...prevState, count: 0 } })
+      setItem((prevState) => { return { ...prevState, count: 1 } })
     }
   }
 

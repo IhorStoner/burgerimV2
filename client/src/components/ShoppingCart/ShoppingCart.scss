@@ -4,7 +4,7 @@
     margin: 0 auto;
     display: flex;
     position: static;
- 
+  
     &--fixed{
         position: fixed;
         left: 0;
@@ -102,11 +102,21 @@
 
 @media screen and (max-width: 998px){
     .shopping-cart__span{
-        font-size: 25px;
+        font-size: 23px;
     }
     .shopping-cart__latter{
+        font-size: 23px
+    }
+    .shopping-cart__orders{
+        max-width: 235px;
+    }
+    .shopping-cart__bays{
+        max-width: 105px;
+    }
+    .shopping-cart__digit{
+        bottom: 24%;
+        right: 13%;
         font-size: 20px;
- 
     }
 }
 

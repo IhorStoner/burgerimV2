@@ -39,11 +39,6 @@ export default function Header(){
               <ul className="nav-menu__moble-sheet">
                 <li className="nav-menu__items">
                   <a className="nav-menu__link nav-menu__link--mobile-line nav-menu__link--active" href="#">
-                    <span className="nav-menu__span">Главная</span>
-                  </a>
-                </li>
-                <li className="nav-menu__items">
-                  <a className="nav-menu__link nav-menu__link--mobile-line nav-menu__link--active" href="#">
                     <span className="nav-menu__span">О Нас</span>
                   </a>
                 </li>
