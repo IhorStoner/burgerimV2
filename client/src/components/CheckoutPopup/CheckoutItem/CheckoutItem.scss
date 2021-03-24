@@ -37,8 +37,26 @@
     outline: none;
     border: none;
   }
-
-  // &__btnContainer {
-  //   display: flex;
-  // }
 }
+
+@media screen and (max-width: 580px){
+  .checkoutItem {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 25px;
+    grid-row-gap: 5px;
+
+    &__title {
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+    &__btnDelContainer {
+      grid-row-start: 1;
+      grid-row-end: 1;
+      grid-column-end: 5;
+    }
+    &__btnContainer {
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
+  }
+ }

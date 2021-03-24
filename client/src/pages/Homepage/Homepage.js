@@ -56,7 +56,9 @@ export default function Homepage(props) {
         </div>
 
       </div>
-      <div className="s-home__shopping-cart" id="shopping-cart" >
+
+
+      <div id='shopping-cart' className="s-home__shopping-cart" >
         <ShoppingCart cart={cart}  handleCheckout={handleCheckout}/>
       </div>
     

@@ -19,7 +19,7 @@ export default function CheckoutItem({ item }) {
 
   return (
     <div className='checkoutItem'>
-      <div className="checkoutItem__container">
+      <div className="checkoutItem__container checkoutItem__title">
         {item.title}
       </div>
       <div className="checkoutItem__container">
@@ -33,7 +33,7 @@ export default function CheckoutItem({ item }) {
       <div className="checkoutItem__container">
         {item.count * item.price}грн
       </div>
-      <div className="checkoutItem__container">
+      <div className="checkoutItem__container checkoutItem__btnDelContainer">
         <button type='button' className='checkoutItem__btnDel' onClick={() => dispatch(deleteCartProduct(item._id))}><DeleteIcon /></button>
       </div>
     </div>

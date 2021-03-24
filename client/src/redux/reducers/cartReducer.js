@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { addToCart, changeProductCount, deleteCartProduct } from "../actions/cartAction";
+import { addToCart, changeProductCount, deleteCartProduct,resetCart } from "../actions/cartAction";
 
 let initialState;
 
@@ -33,7 +33,10 @@ export const storageReducer = createReducer(initialState, {
     const _id = action.payload
     const index = state.findIndex(item => item._id === _id)
     state.splice(index,1)
-  }
+  },
+  [resetCart.type]: (state, action) => {
+    state.splice(0,state.length);
+  },
 });
 
 export default storageReducer;

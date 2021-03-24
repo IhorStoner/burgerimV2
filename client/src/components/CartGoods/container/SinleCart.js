@@ -15,7 +15,7 @@ export default function SingleCart({ product, handleAddToCart }) {
   const increace = (e) => {
     if (item.count >= 99) return null;
     setItem((prevState) => {
-      const prevCount = ++ prevState.count;
+      const prevCount = prevState.count + 1;
       return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
     })
   }
@@ -23,7 +23,7 @@ export default function SingleCart({ product, handleAddToCart }) {
   const decreace = (e) => {
     if (item.count <= 1) return null;
     setItem((prevState) => {
-      const prevCount = prevState.count --;
+      const prevCount = prevState.count - 1;
       return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
     })
   }

@@ -26,8 +26,8 @@ export default function MenuLink(props) {
                 </svg>
                 <span className="order-menu__span">{label}</span>
             </Link>
-            { open  && <div ref={revealGoods} className="order-menu__mobile-show">
-                {products.map((product, i) => <SingleCart key={product._id} product={product} handleAddToCart={handleAddToCart} />)}
+            {(state.listProdux && name === nav) && <div ref={revealGoods} className="order-menu__mobile-show">
+                {products.map((product, i) => product.view === 'yes' && <SingleCart key={product._id} product={product} handleAddToCart={handleAddToCart} />)}
             </div>}
         </React.Fragment>
     )
