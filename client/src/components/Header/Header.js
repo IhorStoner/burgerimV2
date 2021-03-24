@@ -46,12 +46,12 @@ export default function Header() {
                 </li>
                 <li className="nav-menu__items">
                   <a className="nav-menu__link nav-menu__link--mobile-line" href="#">
-                    <span className="nav-menu__span">{lng === 'RUS' && 'О нас'}{lng === 'UKR' && 'О нас'}{lng === 'ENG' && 'About us'}Доставка и оплата</span>
+                    <span className="nav-menu__span">{lng === 'RUS' && 'Доставка и оплата'}{lng === 'UKR' && 'Доставка і оплата'}{lng === 'ENG' && 'About us'}</span>
                   </a>
                 </li>
                 <li className="nav-menu__items">
                   <a className="nav-menu__link nav-menu__link--mobile-line" href="#">
-                    <span className="nav-menu__span">{lng === 'RUS' && 'О нас'}{lng === 'UKR' && 'О нас'}{lng === 'ENG' && 'About us'}Отзывы</span>
+                    <span className="nav-menu__span">{lng === 'RUS' && 'О нас'}{lng === 'UKR' && 'Про нас'}{lng === 'ENG' && 'About us'}</span>
                   </a>
                 </li>
               </ul>
@@ -63,19 +63,19 @@ export default function Header() {
           <li className="nav-menu__items">
             <a className="nav-menu__link nav-menu__link--active" href="#">
               <img src={Info} />
-              <span className="nav-menu__span">{lng === 'RUS' && 'О нас'}{lng === 'UKR' && 'О нас'}{lng === 'ENG' && 'About us'}О Нас</span>
+              <span className="nav-menu__span">{lng === 'RUS' && 'О нас'}{lng === 'UKR' && 'О нас'}{lng === 'ENG' && 'About us'}</span>
             </a>
           </li>
           <li className="nav-menu__items">
             <a className="nav-menu__link" href="#">
               <img src={Moto} />
-              <span className="nav-menu__span">{lng === 'RUS' && 'О нас'}{lng === 'UKR' && 'О нас'}{lng === 'ENG' && 'About us'}Доставка и оплата</span>
+              <span className="nav-menu__span">{lng === 'RUS' && 'Доставка и оплата'}{lng === 'UKR' && 'Доставка і оплата'}{lng === 'ENG' && 'About us'}</span>
             </a>
           </li>
           <li className="nav-menu__items">
             <a className="nav-menu__link" href="#">
               <img src={Mess} />
-              <span className="nav-menu__span">{lng === 'RUS' && 'О нас'}{lng === 'UKR' && 'О нас'}{lng === 'ENG' && 'About us'}Отзывы</span>
+              <span className="nav-menu__span">{lng === 'RUS' && 'Отзывы'}{lng === 'UKR' && 'Відгуки'}{lng === 'ENG' && 'Testimonials'}</span>
             </a>
           </li>
         </ul>
