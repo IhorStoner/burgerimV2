@@ -1,0 +1,54 @@
+.successPopup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  &__modal {
+    padding: 2% 3%;
+    background: #f1f1f1;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    max-width: 585px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+  }
+
+  &__text {
+    font-weight: bold;
+    max-width: 200px;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 5%;
+  }
+
+  &__btn {
+    font-weight: bold;
+    font-size: 1rem;
+    background: #72b847;
+    border-radius: 10px;
+    padding: 3% 4%;
+    color: #fff;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    cursor: pointer;
+
+    &:hover {
+      background: #5e973b;
+    }
+    &:active {
+      background: #4e7e30;
+    }
+  }
+
+  &__btnContainer {
+    text-align: center;
+  }
+}

@@ -5,11 +5,15 @@ import Moto from '../../assets/svg/moto.svg';
 import Mess from '../../assets/svg/mess.svg';
 import Logo from '../../assets/svg/logo.svg';
 import Phone from '../../assets/svg/phone.svg';
+import { useDispatch } from 'react-redux';
 
 export default function Header(){
+  const dispatch = useDispatch()
+
     const [state,setState] = useState({
       menuOpen: false,
     })
+    
 
     const humburgerOn = (e) => {
       if(state.menuOpen){
@@ -19,6 +23,10 @@ export default function Header(){
         e.currentTarget.classList.add("nav-menu__cell-humburger--to-x");
         setState((prevState) => {return {...prevState,  menuOpen: true}});
       }
+    }
+
+    const handleSelectLng = () => {
+      
     }
 
     return (
@@ -88,9 +96,9 @@ export default function Header(){
               <a className="contanct__phone contanct__phone--heade" href="tel:380 96 513 66 94"><img className="contanct__call" src={Phone} alt="phone"/>+380 96 513 66 94</a>
             </span>
             <select className="contanct__select">
-              <option className="contanct__option">RUS</option>
-              <option className="contanct__option">UKR</option>
-              <option className="contanct__option">EN</option>
+              <option className="contanct__option" onClick={() => handleSelectLng('RUS')}>RUS</option>
+              <option className="contanct__option" onClick={() => handleSelectLng('UKR')} >UKR</option>
+              <option className="contanct__option" onClick={() => handleSelectLng('ENG')}>ENG</option>
             </select>
           </div>
         </div>
