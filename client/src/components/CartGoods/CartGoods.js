@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCategories } from '../../redux/selectors/productsSelector';
 import { addToCart } from '../../redux/actions/cartAction';
 import ProductItem from './ProductItem';
+import SingleCart from './container/SinleCart';
 
 function CartGoods() {
   const products = useSelector(getCategories);
@@ -18,7 +19,7 @@ function CartGoods() {
   return (
     <React.Fragment>
       <div className="cart-goods">
-        {products.map(product => <ProductItem product={product} handleAddToCart={handleAddToCart}/>)}
+        {products.map(product => <SingleCart product={product} handleAddToCart={handleAddToCart}/>)}
       </div>
     </React.Fragment>
   )
