@@ -1,4 +1,4 @@
 {
-  "serverUrl": "http://5.101.51.85:5002",
+  "serverUrl": "http://localhost:5002",
   "copy": "http://5.101.51.85:5002"
 }

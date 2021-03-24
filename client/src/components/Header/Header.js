@@ -95,7 +95,7 @@ export default function Header() {
           <select className="contanct__select" onChange={(e) => handleSelectLng(e.target.value)}>
             <option className="contanct__option" value='RUS'>RUS</option>
             <option className="contanct__option" value='UKR'>UKR</option>
-            <option className="contanct__option" value='ENG'>ENG</option>
+            {/* <option className="contanct__option" value='ENG'>ENG</option> */}
           </select>
         </div>
       </div>

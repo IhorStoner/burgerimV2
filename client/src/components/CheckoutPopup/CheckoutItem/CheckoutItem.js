@@ -1,12 +1,13 @@
 import React from 'react'
 import './CheckoutItem.scss'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { changeProductCount,deleteCartProduct } from '../../../redux/actions/cartAction'
 import { ReactComponent as DeleteIcon } from '../../../assets/svg/deleteIcon.svg'
+import { getLanguage } from '../../../redux/selectors/languageSelector'
 
 export default function CheckoutItem({ item }) {
   const dispatch = useDispatch()
-
+  const lng = useSelector(getLanguage)
   const handleChangeCount = (type) => {
     if (type === 'plus') {
       const count = item.count + 1
@@ -20,7 +21,8 @@ export default function CheckoutItem({ item }) {
   return (
     <div className='checkoutItem'>
       <div className="checkoutItem__container checkoutItem__title">
-        {item.title}
+        {lng === 'RUS' && item.title}
+        {lng === 'UKR' && item.titleUKR}
       </div>
       <div className="checkoutItem__container">
         {item.price}грн
