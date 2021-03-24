@@ -3,8 +3,12 @@ import './Footer.scss';
 import WhitePhone from '../../assets/svg/white_phone.svg';
 import WhiteFace from '../../assets/svg/white_facebook.svg';
 import WhiteInst from '../../assets/svg/white_instagram.svg';
+import { useSelector } from 'react-redux';
+import { getLanguage } from '../../redux/selectors/languageSelector';
 
 function Footer(){
+    const lng = useSelector(getLanguage)
+
     return (
         <div className="container">
             <div className="footer">
@@ -23,7 +27,7 @@ function Footer(){
                             </li>
                             <li className="nav-menu__items">
                             <a className="nav-menu__link nav-menu__link--foter nav-menu__link--white nav-menu__link--size" href="#">
-                                <span className="nav-menu__span">Отзывы</span>
+                                <span className="nav-menu__span">{lng === 'RUS' && 'Отзывы'}{lng === 'UKR' && 'Відгуки'}</span>
                             </a>
                             </li>
                         </ul>

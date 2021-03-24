@@ -2,9 +2,12 @@ import React, { useState, useRef } from 'react';
 import AngleUp from '../../../assets/svg/angle-up.svg';
 import AngleDown from '../../../assets/svg/angle-down.svg';
 import config from '../../../config.json';
+import { useSelector } from 'react-redux';
+import { getLanguage } from '../../../redux/selectors/languageSelector';
 
 
 export default function SingleCart({ product, handleAddToCart }) {
+  const lng = useSelector(getLanguage)
   const inpVal = useRef(null);
   const [item, setItem] = useState({
     ...product,
@@ -50,8 +53,8 @@ export default function SingleCart({ product, handleAddToCart }) {
         <img className="cart-goods__picture" src={`${config.serverUrl}/api/images/${item.images[0]}`} />
       </div>
       <div className="cart-goods__desc">
-        <h4 className="cart-goods__h4">{product.title}</h4>
-        <span className="cart-goods__text">{product.description}</span>
+        <h4 className="cart-goods__h4">{lng === 'RUS' && product.title} {lng ==='UKR' && product.titleUKR}</h4>
+        <span className="cart-goods__text">{lng === 'RUS' && product.description} {lng ==='UKR' && product.descriptionUKR}</span>
       </div>
       <div className="cart-goods__action">
         <span className="cart-goods__cost">{item.summ} грн</span>

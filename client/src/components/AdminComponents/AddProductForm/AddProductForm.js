@@ -8,7 +8,9 @@ import config from '../../../config.json'
 export default function AddProductForm() {
   const [result, setResult] = useState({
     title: '',
+    titleUKR: '',
     description: '',
+    descriptionUKR: '',
     category: '',
     price: '',
     view: '',
@@ -24,8 +26,6 @@ export default function AddProductForm() {
     btn.setAttribute('disabled', true);
 
     const formData = getFormData();
-    // [...images].map(img => formData.append('pictures', img))
-    // console.log(formData)
 
     let json;
     try {
@@ -110,12 +110,20 @@ export default function AddProductForm() {
           </div>
         </div>
         <div className='addProduct__container'>
-          <p>Заголовок:</p>
+          <p>Заголовок на русском:</p>
           <input type="text" value={result.title} onChange={(e) => setResult({ ...result, title: e.target.value })} />
         </div>
         <div className='addProduct__container'>
-          <p>Описание:</p>
+          <p>Заголовок на украинском:</p>
+          <input type="text" value={result.titleUKR} onChange={(e) => setResult({ ...result, titleUKR: e.target.value })} />
+        </div>
+        <div className='addProduct__container'>
+          <p>Описание на русском:</p>
           <input type="text" onChange={(e) => setResult({ ...result, description: e.target.value })}/>
+        </div>
+        <div className='addProduct__container'>
+          <p>Описание на украинском:</p>
+          <input type="text" onChange={(e) => setResult({ ...result, descriptionUKR: e.target.value })}/>
         </div>
         <div className='addProduct__container'>
           <p>Категория:</p>

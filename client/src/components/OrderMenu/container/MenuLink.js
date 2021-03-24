@@ -5,7 +5,9 @@ import { getCategories } from '../../../redux/selectors/productsSelector';
 import SingleCart from '../../CartGoods/container/SinleCart'
 import { addToCart } from '../../../redux/actions/cartAction'
 
+
 export default function MenuLink(props) {
+ 
     const { name, label } = props;
     const dispatch = useDispatch()
     const products = useSelector(getCategories)

@@ -4,12 +4,14 @@ import './CheckoutPopup.scss'
 import axios from 'axios'
 import config from '../../config.json'
 import { setIsOpenCheckout } from '../../redux/actions/productsAction'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import ConfirmPopup from './ConfirmPopup/ConfirmPopup'
 import { resetCart } from '../../redux/actions/cartAction'
+import { getLanguage } from '../../redux/selectors/languageSelector'
 
 export default function CheckoutPopup({ cart }) {
   const dispatch = useDispatch()
+  const lng = useSelector(getLanguage)
   const [order, setOrder] = useState({
     cart: cart,
     name: '',
@@ -71,27 +73,27 @@ export default function CheckoutPopup({ cart }) {
       {
         !success && cart.length !== 0 &&
         <div className="checkout__modal">
-          <h3 className='checkout__title'>Ваш заказ</h3>
+          <h3 className='checkout__title'>{lng === 'RUS' && 'Ваш заказ'}{lng === 'UKR' && 'Ваше замовлення'}</h3>
           <div className='checkout__items'>
             {
               cart && cart.map(item => <CheckoutItem item={item} />)
             }
           </div>
-          <div className='checkout__totalSum'>Итого: {order.sum}грн</div>
+          <div className='checkout__totalSum'>{lng === 'RUS' && 'Итого:'} {lng === 'UKR' && 'Разом:'}{order.sum}грн</div>
           <div className="checkout__inputContainer">
-            <span>Имя</span>
+            <span>{lng === 'RUS' && 'Имя:'} {lng === 'UKR' && 'Iм\'я:'}</span>
             <input className={`checkout__input ${isNameValid === false && `checkout__input--error`}`} type="text" onChange={(e) => { setIsNameValid(true); setOrder({ ...order, name: e.target.value }) }} />
           </div>
           <div className="checkout__inputContainer">
-            <span>Телефон</span>
+            <span>{lng === 'RUS' && 'Телефон:'} {lng === 'UKR' && 'Телефон'}</span>
             <input className={`checkout__input ${isPhoneValid === false && `checkout__input--error`}`} type="text" onChange={(e) => { setIsPhoneValid(true); setOrder({ ...order, phone: e.target.value }) }} />
           </div>
           <div className="checkout__inputContainer">
-            <span>Адрес</span>
+            <span>{lng === 'RUS' && 'Адрес:'} {lng === 'UKR' && 'Адреса'}</span>
             <input className={`checkout__input ${isAddressValid === false && `checkout__input--error`}`} type="text" onChange={(e) => { setIsAddressValid(true); setOrder({ ...order, address: e.target.value }) }} />
           </div>
           <div className="checkout__btnContainer">
-            <button type='button' className="checkout__btnSubmit" onClick={() => onSubmitOrder()}>Оформить</button>
+            <button type='button' className="checkout__btnSubmit" onClick={() => onSubmitOrder()}>{lng === 'RUS' && 'Оформить'} {lng === 'UKR' && 'Оформити'}</button>
        
           </div>
          

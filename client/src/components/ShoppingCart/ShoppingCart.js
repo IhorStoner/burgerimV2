@@ -1,7 +1,10 @@
 import React from 'react';
 import './ShoppingCart.scss';
+import { getLanguage } from '../../redux/selectors/languageSelector';
+import { useSelector } from 'react-redux';
 
 function ShoppingCart({ cart,handleCheckout }) {
+  const lng = useSelector(getLanguage)
 
   const mathCountsItems = (cart) => {
     const totalCount = cart.reduce((totalCount, currentItem) => +totalCount + (+currentItem.count), 0)
@@ -28,7 +31,7 @@ function ShoppingCart({ cart,handleCheckout }) {
               </svg>
             </div>
             <div className="shopping-cart__order">
-              <span className="shopping-cart__span">Оформить заказ</span>
+              <span className="shopping-cart__span">{lng === 'RUS' && 'Оформить заказ'}{lng === 'UKR' && 'Оформити замовлення'}</span>
               <svg className="shopping-cart__orders" viewBox="0 0 303 90" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path className="shopping-cart__square" d="M257.788 0H0C8.24524 13.0325 13.0161 28.4615 13.0161 45C13.0161 61.5385 8.24524 76.9675 0 90H257.788C282.758 90 303 69.8528 303 45C303 20.1472 282.757 0 257.788 0Z" />
               </svg>
