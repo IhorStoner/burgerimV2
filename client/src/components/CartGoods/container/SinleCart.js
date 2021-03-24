@@ -5,7 +5,7 @@ import config from '../../../config.json';
 
 export default function SingleCart({ product, handleAddToCart }) {
   const inpVal = useRef(null);
-  console.log(product)
+
   const [item, setItem] = useState({
     ...product,
     count: 1,
@@ -19,12 +19,13 @@ export default function SingleCart({ product, handleAddToCart }) {
     })
   }
   const decreace = (e) => {
-    if (item.count <= 0) return null;
+    if (item.count <= 1) return null;
     setItem((prevState) => {
       const prevCount = prevState.count--;
       return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
     })
   }
+
   const change = (e) => {
     const val = e.target.value;
     const didgit = parseInt(val);
@@ -46,11 +47,11 @@ export default function SingleCart({ product, handleAddToCart }) {
         <img className="cart-goods__picture" src={`${config.serverUrl}/api/images/${item.images[0]}`} />
       </div>
       <div className="cart-goods__desc">
-        <h4 className="cart-goods__h4">{item.title}</h4>
-        <span className="cart-goods__text">{item.description}</span>
+        <h4 className="cart-goods__h4">{product.title}</h4>
+        <span className="cart-goods__text">{product.description}</span>
       </div>
       <div className="cart-goods__action">
-        <span className="cart-goods__cost">{item.summ} гр</span>
+        <span className="cart-goods__cost">{item.summ} грн</span>
         <div className="cart-goods__select">
           <input ref={inpVal} onBlur={blur} onChange={change} className="cart-goods__reveal" value={item.count} />
           <div className="cart-goods__change-select">
