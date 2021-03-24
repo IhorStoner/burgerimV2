@@ -1,65 +1,42 @@
-import React, { useState, useRef } from 'react';
-import AngleUp from '../../../assets/svg/angle-up.svg';
-import AngleDown from '../../../assets/svg/angle-down.svg';
-import config from '../../../config.json';
+import React, { useState } from 'react'
+import AngleUp from '../../assets/svg/angle-up.svg';
+import AngleDown from '../../assets/svg/angle-down.svg';
+import config from '../../config.json'
 
-
-export default function SingleCart({ product, handleAddToCart }) {
-  const inpVal = useRef(null);
+export default function ProductItem({ product,handleAddToCart }) {
   const [item, setItem] = useState({
     ...product,
     count: 1,
-    summ: product.price,
   })
 
-  const increace = (e) => {
-    if (item.count >= 99) return null;
-    setItem((prevState) => {
-      const prevCount = ++ prevState.count;
-      return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
-    })
-  }
-
-  const decreace = (e) => {
-    if (item.count <= 1) return null;
-    setItem((prevState) => {
-      const prevCount = prevState.count --;
-      return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
-    })
-  }
-
-  const change = (e) => {
-    const val = e.target.value;
-    const didgit = parseInt(val);
-    if (!isNaN(didgit)) {
-      const checkZiro = didgit === 0 ? 1 : didgit;
-      setItem((prevState) => { return { ...prevState, count: checkZiro, summ: prevState.price * checkZiro } })
-    } else if (val.trim() === "") {
-      setItem((prevState) => { return { ...prevState, count: val } })
+  const handleChangeCount = (type) => {
+   
+    if(type === 'plus') {
+      const count = item.count+1
+      count < 100 && setItem({...product,count: count})
+    } else {
+      const count = item.count-1
+      count > 0 && setItem({...product,count: count})
     }
-  }
-  const blur = (e) => {
-    if (e.target.value.trim() === "") {
-      setItem((prevState) => { return { ...prevState, count: 1 } })
-    }
+    
   }
 
   return (
     <div className="cart-goods__elem">
       <div className="cart-goods__image-zone">
-        <img className="cart-goods__picture" src={`${config.serverUrl}/api/images/${item.images[0]}`} />
+        <img className="cart-goods__picture" src={`${config.serverUrl}/api/images/${product.images[0]}`} />
       </div>
       <div className="cart-goods__desc">
         <h4 className="cart-goods__h4">{product.title}</h4>
         <span className="cart-goods__text">{product.description}</span>
       </div>
       <div className="cart-goods__action">
-        <span className="cart-goods__cost">{item.summ} грн</span>
+        <span className="cart-goods__cost">30 грн</span>
         <div className="cart-goods__select">
-          <input ref={inpVal} onBlur={blur} onChange={change} className="cart-goods__reveal" value={item.count} />
+          <span className="cart-goods__reveal">{item.count}</span>
           <div className="cart-goods__change-select">
-            <button onClick={increace} className="cart-goods__btn-change"><img src={AngleUp} alt="angle-up" /></button>
-            <button onClick={decreace} className="cart-goods__btn-change"><img src={AngleDown} alt="angle-down" /></button>
+            <button className="cart-goods__btn-change" onClick={() => handleChangeCount('plus')}><img src={AngleUp} alt="angle-up" /></button>
+            <button className="cart-goods__btn-change"  onClick={() => handleChangeCount('minus')}><img src={AngleDown} alt="angle-down" /></button>
           </div>
         </div>
         <button className="cart-goods__bag" onClick={() => handleAddToCart(item)}>

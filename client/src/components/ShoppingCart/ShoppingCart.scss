@@ -4,11 +4,11 @@
     margin: 0 auto;
     display: flex;
     position: static;
-    left: 0;
-    bottom: 0;
-    right: 0;
     &--fixed{
         position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
     }
     &__circle{
         fill: #72B847;
@@ -93,10 +93,20 @@
 
 @media screen and (max-width: 998px){
     .shopping-cart__span{
-        font-size: 25px;
+        font-size: 23px;
     }
     .shopping-cart__latter{
-        font-size: 24px
+        font-size: 23px
+    }
+    .shopping-cart__orders{
+        max-width: 235px;
+    }
+    .shopping-cart__bays{
+        max-width: 105px;
+    }
+    .shopping-cart__digit{
+        bottom: 24%;
+        right: 13%;
     }
 }
 

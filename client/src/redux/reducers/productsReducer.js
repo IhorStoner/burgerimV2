@@ -1,11 +1,12 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { fetchProducts, getCategory } from '../actions/productsAction'
+import { fetchProducts, getCategory, setIsOpenCheckout } from '../actions/productsAction'
 
 const initialState = {
   data: [],
   pages: null,
   loading: false,
-  category: []
+  isOpenCheckout: false,
+  category: [],
 };
 
 const productsReducer = createReducer(initialState, {
@@ -23,9 +24,11 @@ const productsReducer = createReducer(initialState, {
     state.error = null
   },
   [getCategory.fulfilled]: (state, action) => {
-
     state.category = action.payload;
     state.loading = false;
+  },
+  [setIsOpenCheckout.type]: (state, action) => {
+    state.isOpenCheckout = action.payload;
   },
 });
 

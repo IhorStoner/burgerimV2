@@ -9,7 +9,7 @@ function Footer(){
         <div className="container">
             <div className="footer">
                 <div className="footer__up">
-                    <nav className="nav-menu nav-menu--scope nav-menu--margintop nav-menu--line nav-menu--footer">
+                    <nav className="nav-menu nav-menu--scope nav-menu--line nav-menu--footer">
                         <ul className="nav-menu__list">
                             <li className="nav-menu__items">
                             <a className="nav-menu__link nav-menu__link--foter nav-menu__link--white nav-menu__link--size nav-menu__link--active" href="#">
@@ -32,8 +32,8 @@ function Footer(){
                         <div className="contanct__area">
                             <span className="contanct__span contanct__span--flex">
                                 <a className="contanct__phone contanct__phone__footer contanct__phone--white contanct__phone--shift" href="tel:380 96 513 66 94"><img className="contanct__call contanct__call--shift" src={WhitePhone} alt="phone"/>+380 96 513 66 94</a>
-                                <a href="#" className="contanct__social"><img src={WhiteFace} alt="facebook" /></a>
-                                <a href="#" className="contanct__social"><img src={WhiteInst} alt="instagram" /></a>
+                                <a href="#" className="contanct__social contanct__social--footer"><img className="contanct__icon" src={WhiteFace} alt="facebook" /></a>
+                                <a href="#" className="contanct__social contanct__social--footer"><img className="contanct__icon" src={WhiteInst} alt="instagram" /></a>
                             </span>
                         </div>
                     </div>
