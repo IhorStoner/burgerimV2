@@ -46,6 +46,7 @@
   const footer = document.getElementById("footer");
   const menu = document.getElementById("order-menu");
   const goods = document.getElementById("cart-goods");
+
   window.addEventListener("DOMContentLoaded", (e) => {
     const heightWindow = document.documentElement.clientHeight;
     const goodsPos = goods.getBoundingClientRect().bottom;
@@ -53,8 +54,9 @@
   })
 
   window.addEventListener("scroll", (e) => {
+
     const heig = footer.offsetHeight;
-    const heightWindow = document.documentElement.clientHeight;
+    const heightWindow = document.documentElement.clientHeight
     const positionTopWindow = footer.getBoundingClientRect().top;
     const shopHeigh = shoop.offsetHeight;
     const orderMenu = menu.getBoundingClientRect().bottom;
@@ -70,7 +72,7 @@
       shoop.classList.remove("shopping-cart--fixed")
     }
 
-  })
+  })  
 </script>
 
 </html>

@@ -5,3 +5,5 @@ export const addToCart = createAction('ADD_PRODUCT_TO_CART')
 export const deleteCartProduct = createAction('DELETE_PRODUCT_FROM_CART')
 
 export const changeProductCount = createAction('CHANGE_PRODUCT_COUNT')
+
+export const resetCart = createAction('RESET_CART')

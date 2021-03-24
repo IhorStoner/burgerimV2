@@ -2,14 +2,20 @@ import React from 'react';
 import './ShoppingCart.scss';
 
 function ShoppingCart({ cart,handleCheckout }) {
+
+  const mathCountsItems = (cart) => {
+    const totalCount = cart.reduce((totalCount, currentItem) => +totalCount + (+currentItem.count), 0)
+    return totalCount
+  } 
+  
   return (
     <React.Fragment>
-      <div className="shopping-cart" onClick={() => handleCheckout()}>
-        <div className="shopping-cart">
+      <div className="shopping-cart" >
+        <div className="shopping-cart" onClick={() => handleCheckout()}>
           <div className="shopping-cart__place">
             <div className="shopping-cart__count">
               <div className="shopping-cart__digit">
-                <span className="shopping-cart__latter">{cart.length}</span>
+                <span className="shopping-cart__latter">{mathCountsItems(cart)}</span>
               </div>
               <svg className="shopping-cart__bays" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path className="shopping-cart__circle" d="M69.9163 139.833C108.53 139.833 139.833 108.53 139.833 69.9163C139.833 31.3026 108.53 0 69.9163 0C31.3026 0 0 31.3026 0 69.9163C0 108.53 31.3026 139.833 69.9163 139.833Z" />

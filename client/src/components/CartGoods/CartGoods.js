@@ -18,7 +18,7 @@ function CartGoods() {
 
   return (
     <div className="cart-goods">
-      {products.map(product => <SingleCart key={product._id} product={product} handleAddToCart={handleAddToCart} />)}
+      {products.map(product => product.view === 'yes' && <SingleCart key={product._id} product={product} handleAddToCart={handleAddToCart} />)}
     </div>
   )
 }
