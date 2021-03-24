@@ -3,46 +3,46 @@ import AngleUp from '../../../assets/svg/angle-up.svg';
 import AngleDown from '../../../assets/svg/angle-down.svg';
 import config from '../../../config.json';
 
-export default function SingleCart({ product }) {
-  // const inpVal = useRef(null);
-  // console.log(product)
-  // const [item, setItem] = useState({
-  //   ...product,
-  //   count: 1,
-  //   summ: product.price,
-  // })
-  // const increace = (e) => {
-  //   if (item.count >= 99) return null;
-  //   setItem((prevState) => {
-  //     const prevCount = prevState.count++;
-  //     return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
-  //   })
-  // }
-  // const decreace = (e) => {
-  //   if (item.count <= 0) return null;
-  //   setItem((prevState) => {
-  //     const prevCount = prevState.count--;
-  //     return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
-  //   })
-  // }
-  // const change = (e) => {
-  //   const val = e.target.value;
-  //   const didgit = parseInt(val);
-  //   if (!isNaN(didgit)) {
-  //     setItem((prevState) => { return { ...prevState, count: didgit, summ: prevState.price * didgit } })
-  //   } else if (val.trim() === "") {
-  //     setItem((prevState) => { return { ...prevState, count: val } })
-  //   }
-  // }
-  // const blur = (e) => {
-  //   if (e.target.value.trim() === "") {
-  //     setItem((prevState) => { return { ...prevState, count: 0 } })
-  //   }
-  // }
+export default function SingleCart({ product, handleAddToCart }) {
+  const inpVal = useRef(null);
+  console.log(product)
+  const [item, setItem] = useState({
+    ...product,
+    count: 1,
+    summ: product.price,
+  })
+  const increace = (e) => {
+    if (item.count >= 99) return null;
+    setItem((prevState) => {
+      const prevCount = prevState.count++;
+      return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
+    })
+  }
+  const decreace = (e) => {
+    if (item.count <= 0) return null;
+    setItem((prevState) => {
+      const prevCount = prevState.count--;
+      return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
+    })
+  }
+  const change = (e) => {
+    const val = e.target.value;
+    const didgit = parseInt(val);
+    if (!isNaN(didgit)) {
+      setItem((prevState) => { return { ...prevState, count: didgit, summ: prevState.price * didgit } })
+    } else if (val.trim() === "") {
+      setItem((prevState) => { return { ...prevState, count: val } })
+    }
+  }
+  const blur = (e) => {
+    if (e.target.value.trim() === "") {
+      setItem((prevState) => { return { ...prevState, count: 0 } })
+    }
+  }
 
   return (
     <div className="cart-goods__elem">
-      {/* <div className="cart-goods__image-zone">
+      <div className="cart-goods__image-zone">
         <img className="cart-goods__picture" src={`${config.serverUrl}/api/images/${item.images[0]}`} />
       </div>
       <div className="cart-goods__desc">
@@ -58,7 +58,7 @@ export default function SingleCart({ product }) {
             <button onClick={decreace} className="cart-goods__btn-change"><img src={AngleDown} alt="angle-down" /></button>
           </div>
         </div>
-        <button className="cart-goods__bag" >
+        <button className="cart-goods__bag" onClick={() => handleAddToCart(item)}>
           <svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path className="cart-goods__bag-svg" d="M56 0H10C4.47715 0 0 4.47715 0 10V56C0 61.5229 4.47715 66 10 66H56C61.5229 66 66 61.5229 66 56V10C66 4.47715 61.5229 0 56 0Z" />
             <path d="M46.4694 40.4082C42.006 40.4082 38.3878 44.0266 38.3878 48.4898C38.3878 52.9533 42.0061 56.5715 46.4694 56.5715C50.9328 56.5715 54.551 52.9531 54.551 48.4898C54.551 44.0266 50.9327 40.4082 46.4694 40.4082ZM46.4694 55.3485C42.6815 55.3485 39.6109 52.2779 39.6109 48.49C39.6109 44.7021 42.6815 41.6315 46.4694 41.6315C50.2573 41.6315 53.3279 44.7021 53.3279 48.49C53.3278 52.2777 50.2571 55.3485 46.4694 55.3485Z" fill="white" />
@@ -71,7 +71,7 @@ export default function SingleCart({ product }) {
             <path d="M50.5102 47.8678H47.0913V44.449H45.174V47.8678H41.7551V49.7851H45.174V53.2041H47.0913V49.7851H50.5102V47.8678Z" fill="white" />
           </svg>
         </button>
-      </div> */}
+      </div>
     </div>
   )
 }
