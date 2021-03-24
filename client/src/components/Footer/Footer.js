@@ -9,7 +9,7 @@ function Footer(){
         <div className="container">
             <div className="footer">
                 <div className="footer__up">
-                    <nav className="nav-menu nav-menu--scope nav-menu--margintop nav-menu--line">
+                    <nav className="nav-menu nav-menu--scope nav-menu--margintop nav-menu--line nav-menu--footer">
                         <ul className="nav-menu__list">
                             <li className="nav-menu__items">
                             <a className="nav-menu__link nav-menu__link--foter nav-menu__link--white nav-menu__link--size nav-menu__link--active" href="#">

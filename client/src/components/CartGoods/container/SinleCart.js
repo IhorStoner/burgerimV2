@@ -4,6 +4,7 @@ import AngleDown from '../../../assets/svg/angle-down.svg';
 import config from '../../../config.json';
 
 function SingleCart(product){
+    console.log(product)
     const inpVal = useRef(null);
     const [item, setItem] = useState({
         ...product,
@@ -18,7 +19,7 @@ function SingleCart(product){
         })
     }
     const decreace = (e) => {
-        if(item.count <= 0) return null;
+        if(item.count <= 1) return null;
         setItem((prevState) => {
           const prevCount = prevState.count--;
           return {...prevState, count: prevCount, summ: prevCount * prevState.price };
@@ -35,7 +36,7 @@ function SingleCart(product){
     }
     const blur = (e) => {
         if(e.target.value.trim() === ""){
-            setItem((prevState) => {return {...prevState, count: 0 }})
+            setItem((prevState) => {return {...prevState, count: 1 }})
         }
     }
 
