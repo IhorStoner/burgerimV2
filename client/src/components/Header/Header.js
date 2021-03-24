@@ -93,8 +93,8 @@ export default function Header() {
             <a className="contanct__phone contanct__phone--heade" href="tel:380 96 513 66 94"><img className="contanct__call" src={Phone} alt="phone" />+380 96 513 66 94</a>
           </span>
           <select className="contanct__select" onChange={(e) => handleSelectLng(e.target.value)}>
-            <option className="contanct__option" value='RUS'>RUS</option>
             <option className="contanct__option" value='UKR'>UKR</option>
+            <option className="contanct__option" value='RUS'>RUS</option>
             {/* <option className="contanct__option" value='ENG'>ENG</option> */}
           </select>
         </div>
