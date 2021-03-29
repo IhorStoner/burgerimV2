@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const languageReducer = createReducer(initialState, {
-  [changeLanguage.type]: (state,action) => {
+  [changeLanguage.type]: (state, action) => {
     state.lng = action.payload;
   },
 });

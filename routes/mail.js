@@ -15,7 +15,7 @@ mailRouter.post('/', async (req, res) => {
   });
 
   const newCart = cart.map(item => `<h3>${item.title} кол-во ${item.count} ${item.summ}грн</h3>`)
-
+  const orderNumber = Date.now()
   // send mail with defined transport object
   let info = await transporter.sendMail({
     from: '"burgerim.od@gmail.com',
@@ -24,7 +24,7 @@ mailRouter.post('/', async (req, res) => {
     text: `Name: ${name} Phone: ${phone}`,
     html: `
     <h2>Имя: ${name}</h2>
-    <h3>Номер заказа: ${Date.now()}</h3>
+    <h3>Номер заказа: ${orderNumber}</h3>
     <a href="tel:${req.body.phone}">Телефон: ${req.body.phone} </a>
     <h3>Адрес: ${address}</h3>
     <h2>
@@ -36,7 +36,7 @@ mailRouter.post('/', async (req, res) => {
     `
   });
 
-  res.status(201).send('Mail send');
+  res.status(201).json(orderNumber);
 })
 
 

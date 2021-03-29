@@ -8,7 +8,6 @@ import { getLanguage } from '../../../redux/selectors/languageSelector';
 
 export default function SingleCart({ product, handleAddToCart }) {
   const lng = useSelector(getLanguage)
-  const inpVal = useRef(null);
   const [item, setItem] = useState({
     ...product,
     count: 1,
@@ -16,9 +15,9 @@ export default function SingleCart({ product, handleAddToCart }) {
   })
 
   const increace = (e) => {
-    if (item.count >= 99) return null;
+    if (item.count >= 99) return ;
     setItem((prevState) => {
-      const prevCount = ++ prevState.count;
+      const prevCount = prevState.count + 1;
       return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
     })
   }
@@ -26,7 +25,7 @@ export default function SingleCart({ product, handleAddToCart }) {
   const decreace = (e) => {
     if (item.count <= 1) return null;
     setItem((prevState) => {
-      const prevCount = prevState.count --;
+      const prevCount = prevState.count - 1;
       return { ...prevState, count: prevCount, summ: prevCount * prevState.price };
     })
   }
@@ -59,7 +58,7 @@ export default function SingleCart({ product, handleAddToCart }) {
       <div className="cart-goods__action">
         <span className="cart-goods__cost">{item.summ} грн</span>
         <div className="cart-goods__select">
-          <input ref={inpVal} onBlur={blur} maxLength="2" onChange={change} className="cart-goods__reveal" value={item.count} />
+          <input value={item.count} onBlur={blur} maxLength="2" onChange={change} className="cart-goods__reveal" value={item.count} />
           <div className="cart-goods__change-select">
             <button onClick={increace} className="cart-goods__btn-change"><img src={AngleUp} alt="angle-up" /></button>
             <button onClick={decreace} className="cart-goods__btn-change"><img src={AngleDown} alt="angle-down" /></button>

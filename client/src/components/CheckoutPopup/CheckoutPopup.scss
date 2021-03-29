@@ -82,11 +82,28 @@
       background: #4e7e30;
     }
   }
+  &__btnClose {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 
 @media screen and (max-width: 580px){
  .checkout {
+   &__modal {
+    padding: 5px 10px 10px 10px;
+   }
    &__title {
      font-size: 0.9rem;
    }

@@ -94,7 +94,7 @@ export default function EditProductForm({ product }) {
               <AddPhotoIcon />
               <input className='addProduct__inputFile' id='pictures' name='pictures' accept="image/*" type="file" onChange={(e) => onChangeFiles(e.target.files)} />
             </label>
-            {images && [...images].map((file, i) =>
+            {images.length > 0 && [...images].map((file, i) =>
               <div key={i} className="addProduct__imgContainer">
                 <button type='button' className="addProduct__btnDelImg" onClick={() => setImages('')}>
                   <CloseIcon className='addProduct__iconDel' />
@@ -120,8 +120,16 @@ export default function EditProductForm({ product }) {
           <input type="text" value={result.title} onChange={(e) => setResult({ ...result, title: e.target.value })} />
         </div>
         <div className='addProduct__container'>
+          <p>Заголовок на украинском:</p>
+          <input type="text" value={result.titleUKR} onChange={(e) => setResult({ ...result, titleUKR: e.target.value })} />
+        </div>
+        <div className='addProduct__container'>
           <p>Описание:</p>
-          <input type="text" value={result.description} onChange={(e) => setResult({ ...result, description: e.target.value })} />
+          <textarea className='addProduct__textarea' type="text" value={result.description} onChange={(e) => setResult({ ...result, description: e.target.value })} />
+        </div>
+        <div className='addProduct__container'>
+          <p>Описание на украинском:</p>
+          <textarea className='addProduct__textarea' type="text" value={result.descriptionUKR} onChange={(e) => setResult({ ...result, descriptionUKR: e.target.value })}/>
         </div>
         <div className='addProduct__container'>
           <p>Категория:</p>

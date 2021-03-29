@@ -15,7 +15,7 @@ function Footer(){
                 <div className="footer__up">
                     <nav className="nav-menu nav-menu--scope nav-menu--line nav-menu--footer">
                         <ul className="nav-menu__list">
-                            <li className="nav-menu__items">
+                            {/* <li className="nav-menu__items">
                             <a className="nav-menu__link nav-menu__link--foter nav-menu__link--white nav-menu__link--size nav-menu__link--active" href="#">
                                 <span className="nav-menu__span">О Нас</span>
                             </a>
@@ -29,7 +29,7 @@ function Footer(){
                             <a className="nav-menu__link nav-menu__link--foter nav-menu__link--white nav-menu__link--size" href="#">
                                 <span className="nav-menu__span">{lng === 'RUS' && 'Отзывы'}{lng === 'UKR' && 'Відгуки'}</span>
                             </a>
-                            </li>
+                            </li> */}
                         </ul>
                     </nav>
                     <div className="contanct contanct--line contanct--scope">

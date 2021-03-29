@@ -9,6 +9,12 @@
     margin-bottom: 10px;
   }
 
+  &__textarea {
+    width: 240px;
+    height: 60px;
+    resize: none;
+  }
+
   &__labelFile {
     width: 100px;
     height: 100px;

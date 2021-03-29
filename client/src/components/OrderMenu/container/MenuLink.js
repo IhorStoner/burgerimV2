@@ -14,7 +14,7 @@ export default function MenuLink(props) {
     const { nav } = useParams();
     const revealGoods = useRef(null);
     const handleAddToCart = (product) => {dispatch(addToCart(product))};
-    const [open, setOpen] = useState(name === nav);
+    const [open, setOpen] = useState(false);
     const closeGoods = (e) => { open ? setOpen(false) : setOpen(true)};
 
     useEffect(() => {if(name !== nav) setOpen(false);});

@@ -1,6 +1,6 @@
 .checkoutItem {
   display: grid;
-  grid-template-columns: 210px 90px 90px 100px 15px;
+  grid-template-columns: 210px 90px 84px 100px 15px;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -16,12 +16,12 @@
     width: 23px;
     height: 23px;
 
-    &:first-child {
-      margin-right: 5px;
-    }
-    &:last-child {
-      margin-left: 5px;
-    }
+    // &:first-child {
+    //   margin-right: 5px;
+    // }
+    // &:last-child {
+    //   margin-left: 5px;
+    // }
 
     &:hover {
       opacity: 0.9;
@@ -29,6 +29,14 @@
     &:active {
       opacity: 0.8;
     }
+  }
+
+  &__btnContainer {
+    display: flex;
+    margin-right: 5px;
+    margin-left: 5px;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__btnDel {
@@ -39,24 +47,30 @@
   }
 }
 
-@media screen and (max-width: 580px){
+@media screen and (max-width: 550px){
   .checkoutItem {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: 25px;
     grid-row-gap: 5px;
 
     &__title {
       grid-column-start: 1;
-      grid-column-end: 4;
+      grid-column-end: 6;
+      white-space: nowrap;
+      text-align: center;
     }
     &__btnDelContainer {
-      grid-row-start: 1;
-      grid-row-end: 1;
-      grid-column-end: 5;
+      display: flex;
+      justify-content: center;
     }
     &__btnContainer {
       grid-column-start: 2;
       grid-column-end: 4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 3px;
+      margin-right: 3px;
     }
   }
  }

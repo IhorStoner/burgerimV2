@@ -119,11 +119,11 @@ export default function AddProductForm() {
         </div>
         <div className='addProduct__container'>
           <p>Описание на русском:</p>
-          <input type="text" onChange={(e) => setResult({ ...result, description: e.target.value })}/>
+          <input type="text" value={result.description} onChange={(e) => setResult({ ...result, description: e.target.value })}/>
         </div>
         <div className='addProduct__container'>
           <p>Описание на украинском:</p>
-          <input type="text" onChange={(e) => setResult({ ...result, descriptionUKR: e.target.value })}/>
+          <input type="text" value={result.descriptionUKR} onChange={(e) => setResult({ ...result, descriptionUKR: e.target.value })}/>
         </div>
         <div className='addProduct__container'>
           <p>Категория:</p>
