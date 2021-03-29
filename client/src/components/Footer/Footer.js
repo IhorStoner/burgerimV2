@@ -6,16 +6,16 @@ import WhiteInst from '../../assets/svg/white_instagram.svg';
 import { useSelector } from 'react-redux';
 import { getLanguage } from '../../redux/selectors/languageSelector';
 
-function Footer(){
-    const lng = useSelector(getLanguage)
+function Footer() {
+  const lng = useSelector(getLanguage)
 
-    return (
-        <div className="container">
-            <div className="footer">
-                <div className="footer__up">
-                    <nav className="nav-menu nav-menu--scope nav-menu--line nav-menu--footer">
-                        <ul className="nav-menu__list">
-                            {/* <li className="nav-menu__items">
+  return (
+    <div className="container">
+      <div className="footer">
+        <div className="footer__up">
+          <nav className="nav-menu nav-menu--scope nav-menu--line nav-menu--footer">
+            <ul className="nav-menu__list">
+              {/* <li className="nav-menu__items">
                             <a className="nav-menu__link nav-menu__link--foter nav-menu__link--white nav-menu__link--size nav-menu__link--active" href="#">
                                 <span className="nav-menu__span">О Нас</span>
                             </a>
@@ -30,24 +30,27 @@ function Footer(){
                                 <span className="nav-menu__span">{lng === 'RUS' && 'Отзывы'}{lng === 'UKR' && 'Відгуки'}</span>
                             </a>
                             </li> */}
-                        </ul>
-                    </nav>
-                    <div className="contanct contanct--line contanct--scope">
-                        <div className="contanct__area">
-                            <span className="contanct__span contanct__span--flex">
-                                <a className="contanct__phone contanct__phone__footer contanct__phone--white contanct__phone--shift" href="tel:380 96 513 66 94"><img className="contanct__call contanct__call--shift" src={WhitePhone} alt="phone"/>+380 96 513 66 94</a>
-                                <a href="#" className="contanct__social contanct__social--footer"><img className="contanct__icon" src={WhiteFace} alt="facebook" /></a>
-                                <a href="#" className="contanct__social contanct__social--footer"><img className="contanct__icon" src={WhiteInst} alt="instagram" /></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div className="footer__brand">
-                    <span className="footer__burger" >Burgerim © 2021</span>
-                </div>
+            </ul>
+          </nav>
+          <div className="contanct contanct--line contanct--scope">
+            <div className="contanct__area">
+              <span className="contanct__span contanct__span--flex">
+                <a className="footer__contact contanct__phone__footer contanct__phone--white" href="tel:380 96 513 66 94">
+                  <img className="" src={WhitePhone} alt="phone" />
+                  <span>+380 96 513 66 94</span>  
+                </a>
+                <a href="#" className="contanct__social contanct__social--footer"><img className="contanct__icon" src={WhiteFace} alt="facebook" /></a>
+                <a href="#" className="contanct__social contanct__social--footer"><img className="contanct__icon" src={WhiteInst} alt="instagram" /></a>
+              </span>
             </div>
+          </div>
         </div>
-    )
+        <div className="footer__brand">
+          <span className="footer__burger" >Burgerim © 2021</span>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default Footer;

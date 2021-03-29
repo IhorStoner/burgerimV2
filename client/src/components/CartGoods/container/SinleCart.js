@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { getLanguage } from '../../../redux/selectors/languageSelector';
 
 
-export default function SingleCart({ product, handleAddToCart }) {
+export default function SingleCart({ product, handleAddToCart,id }) {
   const lng = useSelector(getLanguage)
   const [item, setItem] = useState({
     ...product,
@@ -47,7 +47,7 @@ export default function SingleCart({ product, handleAddToCart }) {
   }
 
   return (
-    <div className="cart-goods__elem">
+    <div id={id} className="cart-goods__elem">
       <div className="cart-goods__image-zone">
         <img className="cart-goods__picture" src={`${config.serverUrl}/api/images/${product.images[0]}`} />
       </div>

@@ -16,7 +16,7 @@ export default function CheckoutPopup({ cart }) {
   const [order, setOrder] = useState({
     cart: cart,
     name: '',
-    phone: '',
+    phone: '+380',
     address: '',
     sum: '',
   })
@@ -113,15 +113,15 @@ export default function CheckoutPopup({ cart }) {
           <div className='checkout__totalSum'>{lng === 'RUS' && 'Итого:'} {lng === 'UKR' && 'Разом:'}{order.sum}грн</div>
           <div className="checkout__inputContainer">
             <span>{lng === 'RUS' && 'Имя:'} {lng === 'UKR' && 'Iм\'я:'}</span>
-            <input className={`checkout__input ${isNameValid === false && `checkout__input--error`}`} type="text" onChange={(e) => onChangeInput(e, 'name')} />
+            <input className={`checkout__input ${isNameValid === false && `checkout__input--error`}`} value={order.name} type="text" onChange={(e) => onChangeInput(e, 'name')} />
           </div>
           <div className="checkout__inputContainer">
             <span>{lng === 'RUS' && 'Телефон:'} {lng === 'UKR' && 'Телефон'}</span>
-            <input className={`checkout__input ${isPhoneValid === false && `checkout__input--error`}`} type="text" onChange={(e) => onChangeInput(e, 'phone')} />
+            <input className={`checkout__input ${isPhoneValid === false && `checkout__input--error`}`} value={order.phone} type="text" onChange={(e) => onChangeInput(e, 'phone')} />
           </div>
           <div className="checkout__inputContainer">
             <span>{lng === 'RUS' && 'Адрес:'} {lng === 'UKR' && 'Адреса'}</span>
-            <input className={`checkout__input ${isAddressValid === false && `checkout__input--error`}`} type="text" onChange={(e) => onChangeInput(e, 'address')} />
+            <input className={`checkout__input ${isAddressValid === false && `checkout__input--error`}`} value={order.address} type="text" onChange={(e) => onChangeInput(e, 'address')} />
           </div>
           <div className="checkout__btnContainer">
             <button type='button' className="checkout__btnSubmit" onClick={() => onSubmitOrder()}>{lng === 'RUS' && 'Оформить'} {lng === 'UKR' && 'Оформити'}</button>

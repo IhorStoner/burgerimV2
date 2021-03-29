@@ -34,11 +34,11 @@ export default function Header() {
   return (
     <React.Fragment>
       <nav className="nav-menu">
-        <div onClick={humburgerOn} className="nav-menu__cell-humburger">
+        {/* <div onClick={humburgerOn} className="nav-menu__cell-humburger">
           <div className="nav-menu__humburger"></div>
           {state.menuOpen && (
             <>
-              {/* <ul className="nav-menu__moble-sheet">
+              <ul className="nav-menu__moble-sheet">
                 <li className="nav-menu__items">
                   <a className="nav-menu__link nav-menu__link--mobile-line nav-menu__link--active" href="#">
                     <span className="nav-menu__span">{lng === 'RUS' && 'О нас'}{lng === 'UKR' && 'О нас'}{lng === 'ENG' && 'About us'}</span>
@@ -54,11 +54,11 @@ export default function Header() {
                     <span className="nav-menu__span">{lng === 'RUS' && 'О нас'}{lng === 'UKR' && 'Про нас'}{lng === 'ENG' && 'About us'}</span>
                   </a>
                 </li>
-              </ul> */}
+              </ul>
               <div className="nav-menu__moble-close" onClick={humburgerOn}></div>
             </>
           )}
-        </div>
+        </div> */}
         <ul className="nav-menu__list nav-menu__heade">
           {/* <li className="nav-menu__items">
             <a className="nav-menu__link nav-menu__link--active" href="#">
