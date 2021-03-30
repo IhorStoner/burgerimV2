@@ -90,7 +90,7 @@ export default function Header() {
       <div className="contanct">
         <div className="contanct__area">
           <span className="contanct__span">
-            <a className="contanct__phone contanct__phone--heade" href="tel:380 96 513 66 94"><img className="contanct__call" src={Phone} alt="phone" />+380 96 513 66 94</a>
+            <a className="contanct__phone contanct__phone--heade" href="tel:380 68 969 9090"><img className="contanct__call" src={Phone} alt="phone" />+380 68 969 9090</a>
           </span>
           <div className="contanct__select header__lang-container ">
             <div className="header__selectedLang">{lng}</div>

@@ -37,7 +37,7 @@ function Footer() {
               <span className="contanct__span contanct__span--flex">
                 <a className="footer__contact contanct__phone__footer contanct__phone--white" href="tel:380 96 513 66 94">
                   <img className="" src={WhitePhone} alt="phone" />
-                  <span>+380 96 513 66 94</span>  
+                  <span>+380 68 969 9090</span>  
                 </a>
                 <a href="#" className="contanct__social contanct__social--footer"><img className="contanct__icon" src={WhiteFace} alt="facebook" /></a>
                 <a href="#" className="contanct__social contanct__social--footer"><img className="contanct__icon" src={WhiteInst} alt="instagram" /></a>
