@@ -35,7 +35,7 @@ function Footer() {
           <div className="contanct contanct--line contanct--scope">
             <div className="contanct__area">
               <span className="contanct__span contanct__span--flex">
-                <a className="footer__contact contanct__phone__footer contanct__phone--white" href="tel:380 96 513 66 94">
+                <a className="footer__contact contanct__phone__footer contanct__phone--white" href="tel:380 68 969 9090">
                   <img className="" src={WhitePhone} alt="phone" />
                   <span>+380 68 969 9090</span>  
                 </a>
