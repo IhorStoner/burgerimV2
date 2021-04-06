@@ -17,6 +17,9 @@ app.use(bodyParser.json());
 
 app.use('/api', apiRouter);
 
+app.get('/.well-known/pki-validation/4974C90CE672BEEDAF65FD9993375506.txt', async (req, res) => {
+  res.sendFile(path.join(__dirname, '.well-known', 'pki-validation', '4974C90CE672BEEDAF65FD9993375506.txt'))
+})
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, './client/build')))
