@@ -37,8 +37,9 @@ function Footer() {
               <span className="contanct__span contanct__span--flex">
                 <a className="footer__contact contanct__phone__footer contanct__phone--white" href="tel:380 68 969 9090">
                   <img className="" src={WhitePhone} alt="phone" />
-                  <span>+380 68 969 9090</span>  
+                  <span>+380 68 969 9090</span>
                 </a>
+
                 <a href="#" className="contanct__social contanct__social--footer"><img className="contanct__icon" src={WhiteFace} alt="facebook" /></a>
                 <a href="#" className="contanct__social contanct__social--footer"><img className="contanct__icon" src={WhiteInst} alt="instagram" /></a>
               </span>
@@ -46,7 +47,11 @@ function Footer() {
           </div>
         </div>
         <div className="footer__brand">
-          <span className="footer__burger" >Burgerim © 2021</span>
+          <div className="footer__burger" >
+            {lng === 'RUS' && 'Дерибасовская 1'}
+            {lng === 'UKR' && 'Дерибасівська 1'}
+          </div>
+          <div className="footer__burger" >Burgerim © 2021</div>
         </div>
       </div>
     </div>

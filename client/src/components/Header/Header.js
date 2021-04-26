@@ -78,6 +78,7 @@ export default function Header() {
               <span className="nav-menu__span">{lng === 'RUS' && 'Отзывы'}{lng === 'UKR' && 'Відгуки'}{lng === 'ENG' && 'Testimonials'}</span>
             </a>
           </li> */}
+          ALENBY
         </ul>
       </nav>
 

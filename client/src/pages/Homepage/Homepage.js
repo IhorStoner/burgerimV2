@@ -14,56 +14,54 @@ import { getCheckout } from '../../redux/selectors/productsSelector';
 import CheckoutPopup from '../../components/CheckoutPopup/CheckoutPopup'
 import { setIsOpenCheckout } from '../../redux/actions/productsAction';
 import { getCategory } from '../../redux/actions/productsAction';
+import { getLanguage } from '../../redux/selectors/languageSelector';
 
-export default function Homepage(props) {
+export default function Homepage() {
   const cart = useSelector(getCart)
   const isOpenCheckout = useSelector(getCheckout)
   const { nav } = useParams();
   const dispatch = useDispatch()
+  const lng = useSelector(getLanguage)
 
   useEffect(() => {
     dispatch(getCategory(nav))
   }, [nav])
 
-  const orderData = {
-    cart: cart,
-    name: 'Ihor',
-    phone: '+380666543439',
-    address: 'Маршала малиновского 16',
-    sum: 100,
-
-  }
 
   const handleCheckout = async () => {
     dispatch(setIsOpenCheckout(true))
-    // await axios.post(`${config.serverUrl}/api/order`,cart)
   }
 
   return (
     <section className="s-home">
       <div className="s-home__container">
-        {isOpenCheckout && <CheckoutPopup cart={cart}/>}
+        {isOpenCheckout && <CheckoutPopup cart={cart} />}
         <div className="s-home__head">
           <Header />
+
         </div>
-    
+        <div className='s-home__street'>
+        {lng === 'RUS' && 'Дерибасовская 1'}
+        {lng === 'UKR' && 'Дерибасівська 1'}
+          
+        </div>
         <div id="order-menu" className="s-home__order-menu">
-          <OrderMenu/>
+          <OrderMenu />
         </div>
-    
+
         <div id="cart-goods" className="s-home__cart-goods">
-          <CartGoods/>
+          <CartGoods />
         </div>
 
       </div>
 
 
       <div id='shopping-cart' className="s-home__shopping-cart" >
-        <ShoppingCart cart={cart}  handleCheckout={handleCheckout}/>
+        <ShoppingCart cart={cart} handleCheckout={handleCheckout} />
       </div>
-    
-      <footer className="s-footer"  id="footer" >
-        <Footer/>
+
+      <footer className="s-footer" id="footer" >
+        <Footer />
       </footer>
 
     </section>

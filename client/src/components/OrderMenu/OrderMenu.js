@@ -18,7 +18,7 @@ export default function OrderMenu() {
     { name: "sales", label: "Акции", labelUKR: "Акції", scrollTo: 'sales' },
   ]
 
- 
+
 
 
 
@@ -27,6 +27,12 @@ export default function OrderMenu() {
       <div className="order-menu__contact">
         <span className="contanct__span">
           <a className="contanct__phone" href="tel:380 68 969 9090"><img className="contanct__call" src={Phone} alt="phone" />+380 68 969 9090</a>
+        </span>
+        <span className="contanct__span">
+          <a className="contanct__phone">
+            {lng === 'RUS' && 'Дерибасовская 1'}
+            {lng === 'UKR' && 'Дерибасівська 1'}
+          </a>
         </span>
       </div>
       {list.map((el, i) => (
